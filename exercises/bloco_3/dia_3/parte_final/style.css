@@ -35,7 +35,11 @@ ul.program-languages li:nth-child(-n+3) {
   color: blue;
 }
 
-.java-all {
+/* 
+Linha feita seguindo a ajuda do Diego Figueirêdo - Turma 11
+Segue link da thread no slack: https://trybecourse.slack.com/archives/C01PLFW7347/p1616183332221000?thread_ts=1616182219.213400&cid=C01PLFW7347 
+*/ 
+li[value*="java"] {
   background-color: pink;
 }
 
