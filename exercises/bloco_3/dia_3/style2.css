@@ -1,32 +1,31 @@
-img {
+img{
   width: 200px;
 }
 
-.super-mario {
+.set-pos {
   position: absolute;
 }
 
+.super-mario {
+}
+
 .goomba {
-  position: absolute;
   top: 380px;
 }
 
 .baloon {
-  position: absolute;
   z-index: 1;
   top: 350px;
   left: 310px;
 }
 
 .word {
-  position: absolute;
   z-index: 2;
   left: 330px;
   top: 380px;
 }
 
 .bowser {
-  position: absolute;
   z-index: 3;
   left: 508px;
   top: 400px;
