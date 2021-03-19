@@ -26,3 +26,16 @@ ol li:nth-of-type(2n) {
 ol li:nth-of-type(2), ol li:nth-of-type(3), ol li:nth-of-type(5), ol li:nth-of-type(7) {
   text-transform: uppercase;
 }
+
+h1, h2, h3, h4, h5, h6 {
+  color: red;
+}
+
+.headers { 
+  color: red;
+}
+
+.headers em {
+  font-size: 40px;
+  border: 1px solid black;
+}
