@@ -11,4 +11,15 @@ img {
   top: 380px;
 }
 
+.baloon {
+  position: absolute;
+  z-index: 1;
+  left: 210px;
+}
 
+.word {
+  position: absolute;
+  z-index: 2;
+  left: 230px;
+  top: 110px;
+}
