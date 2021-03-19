@@ -2,14 +2,13 @@ img {
   width: 200px;
 }
 
-.baloon {
+.super-mario {
   position: absolute;
-  z-index: 1;
 }
 
-.word {
+.goomba {
   position: absolute;
-  z-index: 2;
-  left: 25px;
-  top: 705px;
+  top: 380px;
 }
+
+
