@@ -15,11 +15,28 @@ div:nth-of-type(3) {
 }
 
 div:nth-of-type(4) {
-  background-color: darkslategrey;
+  background-color: black;
 }
 
 div:nth-of-type(5) {
   background-color: lightskyblue;
 }
 
+div:nth-of-type(1) > h3{
+  color: blue;
+}
+div:nth-of-type(2) > h3 {
+  color: cyan;
+}
 
+div:nth-of-type(3) > h3 {
+  color: white;
+}
+
+div:nth-of-type(4) > h3 {
+  color: pink;
+}
+
+div:nth-of-type(5) > h3 {
+  color: darkred;
+}
