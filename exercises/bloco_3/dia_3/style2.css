@@ -1,0 +1,15 @@
+img {
+  width: 200px;
+}
+
+.baloon {
+  position: absolute;
+  z-index: 1;
+}
+
+.word {
+  position: absolute;
+  z-index: 2;
+  left: 25px;
+  top: 705px;
+}
