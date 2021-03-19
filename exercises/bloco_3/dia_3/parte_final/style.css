@@ -47,3 +47,11 @@ li {
 li em {
   font-weight: bold;
 }
+
+ul.program-languages li:nth-child(-n+3) {
+  color: blue;
+}
+
+.java-all {
+  background-color: pink;
+}
