@@ -5,27 +5,38 @@
 }
 
 body {
-  background-color: lightyellow;
+  /* background-color: lightyellow; */
 }
 
 .header {
   text-align: center;
-  margin-top: 40px;
-  margin-bottom: 20px;
+  padding: 40px 0;
   font-size: 1.5em;
+  color: white;
+  background-color: black;
 }
 
-ul li {
+.navigation ul {
+  background-color: lightgrey;
+  padding: 10px 0;
+}
+
+.navigation ul li {
   list-style: none;
   display: inline-block;
-  padding: 15px 30px;
 }
 
-ul li a {
+.navigation ul li a {
   text-decoration: none;
   font-size: 1.4em;
   color: black;
   font-weight: 600;
+  padding: 10px 30px;
+}
+
+.navigation ul li a:hover {
+  background-color: black;
+  color: white;
 }
 
 .navigation {
@@ -57,4 +68,17 @@ img {
 
 .fun-fact-eyes-pic {
   width: 350px;
+}
+
+.references {
+  list-style: square;
+}
+
+.references li {
+  margin: 15px 0px;
+}
+
+.references li a {
+  font-size: 1.3em;
+  color: black;
 }
