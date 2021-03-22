@@ -8,7 +8,7 @@ body {
   background-color: lightyellow;
 }
 
-.page-title {
+.header {
   text-align: center;
   margin-top: 40px;
   margin-bottom: 20px;
@@ -28,6 +28,6 @@ ul li a {
   font-weight: 600;
 }
 
-.nav-menu {
+.navigation {
   text-align: center;
 }
