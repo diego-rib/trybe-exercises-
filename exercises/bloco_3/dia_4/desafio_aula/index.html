@@ -9,6 +9,16 @@
         text-align: center;
       }
 
+      ul li {
+        list-style: none;
+        display: inline-block;
+      }
+
+      .podium {
+        align-content: center;
+        text-align: center;
+      }
+
       .first {
         background-color: rgb(235, 200, 84);
         font-size: 20px;
@@ -33,20 +43,24 @@
         width: 300px;
       }
 
+      .podium-rewards {
+        text-align: center;
+      }
+
     </style>
   </head>
   <body>
     <header>
       <h1>Hackathon Results</h1>
     </header>
-    <section>
+    <section class="podium">
       <ul>
-        <li class="first">1º - Equipe 1</li>
+        <li class="first">1º - Equipe 1</li><br>
         <li class="second">2º - Equipe 2</li>
         <li class="third">3º - Equipe 3</li>
       </ul>
     </section>
-    <section>
+    <section class="podium-rewards">
       <h3>Premiação Primeiro Lugar:</h3>
       <ul>
         <li>| R$ 1000,00 por integrante da equipe |</li>
