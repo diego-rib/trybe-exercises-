@@ -1,24 +1,17 @@
 let nota = 92;
 
-switch (nota) {
-  case nota < 100 && nota >= 90:
-    return 'A';
-    break;
-  case nota >= 80:
-    return 'B';
-    break;
-  case nota >= 70:
-    return 'C';
-    break;
-  case nota >= 60:
-    return 'D';
-    break;
-  case nota >= 50:
-    return 'E';
-    break;
-  case nota < 50:
-    return 'F';
-    break;
-  default:
-    return 'Nota inválida';
+if (nota > 100 || nota < 0) {
+  console.log('Nota inválida');
+} else if (nota >= 90) {
+  console.log( 'A');
+} else if (nota >= 80) {
+  console.log( 'B');
+} else if (nota >= 70) {
+  console.log( 'C');
+} else if (nota >= 60) {
+  console.log( 'D');
+} else if (nota >= 50) {
+  console.log( 'E');
+} else {
+  console.log( 'F');
 }
