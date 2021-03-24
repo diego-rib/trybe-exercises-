@@ -1,0 +1,11 @@
+O que eu vou aprender na Trybe:
+
+- Unix
+- Bash
+- Git
+<<<<<<< HEAD:exercises/2.1/trybe-skills.txt
+- HTML
+- CSS
+=======
+- JavaScript
+>>>>>>> exercises/3.4:exercises/modulo_1/bloco_2/trybe-skills.txt

@@ -1,0 +1,40 @@
+
+body {
+  font-size: 16px;
+}
+
+h1 {
+  font-family: sans-serif;
+  text-decoration: overline;
+  text-align: center;
+  font-size: 65px;
+  color: orange;
+}
+
+p {
+  font-weight: 600;
+  font-size: 3em;
+  font-style: italic;
+  text-align: center;
+}
+
+ul {
+  line-height: 50px;
+  background-color: blue;
+}
+
+.bg-color {
+  background-color: crimson;
+}
+
+#amarelo {
+  background-color: #FFFF00;
+}
+
+#vermelho {
+  background-color: #FF0000;
+}
+
+#marrom {
+  background-color: #4b3621;
+}
