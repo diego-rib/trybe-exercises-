@@ -45,3 +45,22 @@ function checkNameSize (names) {
   }
   return biggestName;
 }
+
+// 5 - Função que retorna o inteiro que mais se repete
+function checkMoreRepeated (numbers) {
+  let highestOccurrence = 0;
+  let mostRepeated;
+  for (let index = 0; index < numbers.length; index += 1) {
+    let occurrence = 0;
+    for (let secondIndex = 0; secondIndex < numbers.length; secondIndex += 1) {
+      if (numbers[index] === numbers[secondIndex]) {
+        occurrence += 1;
+      }
+    }
+    if (occurrence > highestOccurrence) {
+      highestOccurrence = occurrence;
+      mostRepeated = numbers[index];
+    }
+  }
+  return mostRepeated;
+}
