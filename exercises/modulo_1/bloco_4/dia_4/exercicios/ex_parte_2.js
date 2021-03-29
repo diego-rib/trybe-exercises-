@@ -73,3 +73,18 @@ function summation (number) {
   }
   return sum;
 }
+
+// 7 - Função que verifica se uma string corresponde ao final de outra
+function checkWordEnding (word, ending) {
+  let secondIndex = ending.length - 1;
+  let index = word.length-1;
+  let end = word.length - ending.length;
+  trueEnding = true;
+  for (; index >= end; index -= 1) {
+    if (word[index] !== ending[secondIndex]) {
+      trueEnding = false;
+    }
+    secondIndex -= 1;
+  }
+  return trueEnding;
+}
