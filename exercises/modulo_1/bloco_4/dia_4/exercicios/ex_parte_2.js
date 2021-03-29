@@ -64,3 +64,12 @@ function checkMoreRepeated (numbers) {
   }
   return mostRepeated;
 }
+
+// 6 - Função que retorna o somatório de todos os números de 1 a N
+function summation (number) {
+  let sum = 0;
+  for (let index = 1; index <= number; index += 1) {
+    sum += index;
+  }
+  return sum;
+}
