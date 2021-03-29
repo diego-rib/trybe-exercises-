@@ -22,3 +22,15 @@ function checkHigherIndex (numbers) {
   }
   return higherIndex;
 }
+
+// 3 - Função que retorna o índice do menor número em um array
+function checkSmallerIndex (numbers) {
+  let smaller = numbers[0];
+  let smallerIndex = 0;
+  for (let index = 0; index < numbers.length; index += 1) {
+    if (numbers[index] < smaller) {
+      smallerIndex = index;
+    }
+  }
+  return smallerIndex;
+}
