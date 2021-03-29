@@ -34,3 +34,14 @@ function checkSmallerIndex (numbers) {
   }
   return smallerIndex;
 }
+
+// 4 - Função que retorna o nome com a maior quantidade de caracteres
+function checkNameSize (names) {
+  let biggestName = names[0];
+  for (let index = 0; index < names.length; index += 1) {
+    if (biggestName.length < names[index]) {
+      biggestName = names[index];
+    }
+  }
+  return biggestName;
+}
