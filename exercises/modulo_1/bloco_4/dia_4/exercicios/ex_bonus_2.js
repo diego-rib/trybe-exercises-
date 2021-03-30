@@ -3,9 +3,6 @@ let num2 = 81;
 
 
 // Source : https://stackoverflow.com/questions/14879691/get-number-of-digits-with-javascript
-// a idéia de converter o numero para string e assim melhor mexer com seus digitos separadamente
-// veio de quando vi o codigo do link citado acima
-
 function getlength(number) {
   return number.toString().length;
 } 
