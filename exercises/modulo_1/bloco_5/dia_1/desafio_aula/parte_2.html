@@ -15,13 +15,13 @@
     <p class="pretty-paragraphs" id="second-paragraph">Segundo parágrafo!</p>
 
     <script>
-      var paragraph = document.getElementById("paragraph");
+      var paragraph = document.querySelector("#paragraph");
       paragraph.style.color = "red";
-      document.getElementById("page-title").innerText = 'Truque de Mestre';
-      document.getElementById("second-paragraph").innerText = 'E a info continua salva...';
-      document.getElementById("subtitle").innerText = 'O DOM é maravilhoso';
-      document.getElementsByClassName("pretty-paragraphs")[0].style.color = "pink";
-      document.getElementsByTagName("h4")[0];
+      document.querySelector("#page-title").innerText = 'Truque de Mestre';
+      document.querySelector("#second-paragraph").innerText = 'E a info continua salva...';
+      document.querySelector("#subtitle").innerText = 'O DOM é maravilhoso';
+      document.querySelector(".pretty-paragraphs").style.color = "pink";
+      document.querySelector("h4");
     </script>
   </body>
 </html>
