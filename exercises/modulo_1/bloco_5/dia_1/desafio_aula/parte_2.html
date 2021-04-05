@@ -1,10 +1,18 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <style>
+      .pretty-paragraphs {
+        font-size: 1.2em;
+        text-decoration: line-through;
+      }
+    </style>
+  </head>
   <body>
     <h2 id="page-title">Título</h2>
-    <p id="paragraph">Dê uma cor para este parágrafo!</p>
+    <p class="pretty-paragraphs" id="paragraph">Dê uma cor para este parágrafo!</p>
     <h4 id="subtitle">Subtítulo</h4>
-    <p id="second-paragraph">Segundo parágrafo!</p>
+    <p class="pretty-paragraphs" id="second-paragraph">Segundo parágrafo!</p>
 
     <script>
       var paragraph = document.getElementById("paragraph");
@@ -12,6 +20,8 @@
       document.getElementById("page-title").innerText = 'Truque de Mestre';
       document.getElementById("second-paragraph").innerText = 'E a info continua salva...';
       document.getElementById("subtitle").innerText = 'O DOM é maravilhoso';
+      document.getElementsByClassName("pretty-paragraphs")[0].style.color = "pink";
+      document.getElementsByTagName("h4")[0];
     </script>
   </body>
 </html>
