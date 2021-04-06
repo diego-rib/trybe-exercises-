@@ -67,3 +67,7 @@ let subtitles = document.querySelectorAll('h3');
 for (let index = 0; index < subtitles.length; index += 1) {
   subtitles[index].className = 'description';
 }
+
+let removeLeftContent = document.querySelector('.left-content');
+let parent = removeLeftContent.parentElement;
+parent.removeChild(removeLeftContent);
