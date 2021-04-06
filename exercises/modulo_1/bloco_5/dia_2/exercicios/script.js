@@ -75,3 +75,6 @@ parent.removeChild(removeLeftContent);
 
 document.querySelector('.right-content').style.marginRight = 'auto';
 
+
+document.querySelector('.center-content').parentElement.style.backgroundColor = 'green';
+
