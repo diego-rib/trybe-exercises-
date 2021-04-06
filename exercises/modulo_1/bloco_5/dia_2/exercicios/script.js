@@ -48,3 +48,9 @@ let listItem = document.createElement('li');
 listItem.innerText = numbers[index];
 numbersList.appendChild(listItem);
 }
+
+
+for (let index = 1; index <= 3; index += 1) {
+  let subtitle = document.createElement('h3');
+  document.querySelector('.main-content').appendChild(subtitle);
+}
