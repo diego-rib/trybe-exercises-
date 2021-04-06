@@ -29,7 +29,8 @@
     let newChild2 = document.createElement('div');
     document.querySelector('#primeiroFilhoDoFilho').appendChild(newChild2);
     // 4. A partir desse filho criado, acesse terceiroFilho
-    
+    let newChildLocation = document.querySelector('#primeiroFilhoDoFilho').firstChild;
+    newChildLocation.parentElement.parentElement.nextElementSibling;
   </script>
 </div>
 </body>
