@@ -78,3 +78,8 @@ document.querySelector('.right-content').style.marginRight = 'auto';
 
 document.querySelector('.center-content').parentElement.style.backgroundColor = 'green';
 
+
+let itemsRemoved = 2;
+for (let index = 0; index < itemsRemoved; index += 1) {
+  numbersList.lastChild.remove();
+}
