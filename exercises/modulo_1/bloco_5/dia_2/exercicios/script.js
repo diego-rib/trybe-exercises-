@@ -71,3 +71,7 @@ for (let index = 0; index < subtitles.length; index += 1) {
 let removeLeftContent = document.querySelector('.left-content');
 let parent = removeLeftContent.parentElement;
 parent.removeChild(removeLeftContent);
+
+
+document.querySelector('.right-content').style.marginRight = 'auto';
+
