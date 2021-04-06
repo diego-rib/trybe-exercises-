@@ -1,3 +1,5 @@
+// Parte 1 do exercicio
+
 function newElement(tag, classe) {
   let element = document.createElement(tag);
   element.className = classe;
@@ -54,3 +56,8 @@ for (let index = 1; index <= 3; index += 1) {
   let subtitle = document.createElement('h3');
   document.querySelector('.main-content').appendChild(subtitle);
 }
+
+
+// Parte 2 do exercicio
+
+document.querySelector('h1').className = 'title';
