@@ -20,3 +20,6 @@ document.querySelector('.center-content').appendChild(paragraph);
 
 let leftContent = newElement('div', 'left-content');
 document.querySelector('.main-content').appendChild(leftContent);
+
+let rightContent = newElement('div', 'right-content');
+document.querySelector('.main-content').appendChild(rightContent);
