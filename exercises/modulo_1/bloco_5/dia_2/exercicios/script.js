@@ -61,3 +61,9 @@ for (let index = 1; index <= 3; index += 1) {
 // Parte 2 do exercicio
 
 document.querySelector('h1').className = 'title';
+
+
+let subtitles = document.querySelectorAll('h3');
+for (let index = 0; index < subtitles.length; index += 1) {
+  subtitles[index].className = 'description';
+}
