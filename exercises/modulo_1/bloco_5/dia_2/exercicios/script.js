@@ -23,3 +23,7 @@ document.querySelector('.main-content').appendChild(leftContent);
 
 let rightContent = newElement('div', 'right-content');
 document.querySelector('.main-content').appendChild(rightContent);
+
+let image = newElement('img', 'small-image');
+image.src = 'https://picsum.photos/200';
+document.querySelector('.left-content').appendChild(image);
