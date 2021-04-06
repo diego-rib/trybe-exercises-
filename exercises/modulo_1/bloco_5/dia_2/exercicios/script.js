@@ -11,3 +11,5 @@ document.body.appendChild(titulo);
 let mainContent = newElement('div', 'main-content');
 document.body.appendChild(mainContent);
 
+let centerContent = newElement('div', 'center-content');
+document.querySelector('.main-content').appendChild(centerContent);
