@@ -36,10 +36,12 @@ function addClassTech (element) {
   while (document.querySelector('.tech')){
     removeClassTech(document.querySelector('.tech'));
   }
-  element.classList.push = 'tech';
+  element.target.classList.add('tech');
 }
 
-addClassTech(divUm);
+divUm.addEventListener("click", addClassTech);
+divDois.addEventListener("click", addClassTech);
+divTres.addEventListener("click", addClassTech);
 
 function resetText(event) {
   // O Event é passado como um parâmetro para a função.
