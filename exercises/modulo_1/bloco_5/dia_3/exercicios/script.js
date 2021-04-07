@@ -34,3 +34,14 @@ function createDaysOfTheMonth() {
 }
 
 createDaysOfTheMonth();
+
+function createButton(string, id) {
+  let btn = document.createElement('button');
+  let parent = document.querySelector('.buttons-container');
+  btn.id = id;
+  btn.innerText = string;
+
+  parent.appendChild(btn);
+}
+
+createButton('Feriados', 'btn-holiday');
