@@ -56,6 +56,12 @@ function cleanInput() {
 
 input.addEventListener("change", cleanInput);
 
+function redirectPage () {
+  location.href = 'https://diego-rib.github.io/';
+}
+
+myWebpage.addEventListener("dblclick", redirectPage);
+
 function resetText(event) {
   // O Event é passado como um parâmetro para a função.
   event.target.innerText = 'Opção reiniciada';
