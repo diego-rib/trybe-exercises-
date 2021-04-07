@@ -62,3 +62,5 @@ btnHoliday.addEventListener('click', function() {
     colorChange(holidays,'lightgrey');
   }
 });
+
+createButton('Sexta-feira', 'btn-friday');
