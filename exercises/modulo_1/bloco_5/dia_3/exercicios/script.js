@@ -45,3 +45,20 @@ function createButton(string, id) {
 }
 
 createButton('Feriados', 'btn-holiday');
+
+let btnHoliday = document.querySelector('#btn-holiday');
+
+function colorChange(elements, color) {
+  for (let index = 0; index < elements.length; index += 1) {
+    elements[index].style.backgroundColor = color;
+  }
+}
+
+btnHoliday.addEventListener('click', function() {
+  let holidays = document.querySelectorAll('.holiday');
+  if (holidays[0].style.backgroundColor === 'lightgrey') {
+    colorChange(holidays,'rgb(238, 238, 238)');
+  } else {
+    colorChange(holidays,'lightgrey');
+  }
+});
