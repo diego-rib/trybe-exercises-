@@ -23,7 +23,8 @@ function createDaysOfTheMonth() {
 
     if (day === 24 || day === 25 || day === 31) {
       dayItem.classList.add('holiday');
-    } else if (day === 4 || day === 11 || day === 18 || day === 25) {
+    }
+    if (day === 4 || day === 11 || day === 18 || day === 25) {
       dayItem.classList.add('friday');
     }
     dayItem.classList.add('day');
@@ -54,13 +55,42 @@ function colorChange(elements, color) {
   }
 }
 
+btnHolidayEnable = false;
 btnHoliday.addEventListener('click', function() {
   let holidays = document.querySelectorAll('.holiday');
-  if (holidays[0].style.backgroundColor === 'lightgrey') {
+  if (btnHolidayEnable) {
     colorChange(holidays,'rgb(238, 238, 238)');
+    btnHolidayEnable = false;
   } else {
     colorChange(holidays,'lightgrey');
+    btnHolidayEnable = true;
   }
 });
 
 createButton('Sexta-feira', 'btn-friday');
+
+function changeTextToNumber(friday, number) {
+  friday.innerText = number;
+}
+
+function changeText(fridays, text) {
+  for (let index = 0; index < fridays.length; index += 1) {
+    fridays[index].innerText = text;
+  }
+}
+
+let btnFriday = document.querySelector('#btn-friday');
+btnFridayEnable = false;
+btnFriday.addEventListener('click', function() {
+  let fridays = document.querySelectorAll('.friday');
+  let numbersFridays = [4, 11, 18, 25];
+  if (btnFridayEnable) {
+    for (let index = 0; index < numbersFridays.length; index += 1) {
+      changeTextToNumber(fridays[index], numbersFridays[index]);
+    }
+    btnFridayEnable = false;
+  } else {
+    changeText(fridays, 'SEXTOU o/');
+    btnFridayEnable = true;
+  }
+});

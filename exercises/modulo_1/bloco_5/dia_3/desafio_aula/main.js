@@ -4,55 +4,44 @@ const divTres = document.getElementById('divTres');
 const input = document.getElementById('input');
 const myWebpage = document.getElementById('mySpotrybefy');
 
-function removeClassTech (event) {
-  let elementClassList = event.classList;
-  for (let index = 0; index < elementClassList.length; index += 1) {
-    if (elementClassList[index] === 'tech') {
-      elementClassList.remove('tech');
-    }
+function removeClassTech () {
+  let elementTech = document.querySelector('.tech');
+  while (elementTech){
+    elementTech.classList.remove('tech');
+    elementTech = document.querySelector('.tech');
   }
 }
 
-function addClassTech (element) {
-  while (document.querySelector('.tech')){
-    removeClassTech(document.querySelector('.tech'));
-  }
-  element.target.classList.add('tech');
-}
+let divContainer = document.querySelector('.container');
+divContainer.addEventListener("click", function(event) {
+  removeClassTech();
+  event.target.classList.add('tech');
+});
 
-divUm.addEventListener("click", addClassTech);
-divDois.addEventListener("click", addClassTech);
-divTres.addEventListener("click", addClassTech);
 
-function changeText(event) {
+input.addEventListener("keyup", function() {
   let element = document.querySelector('.tech'); 
   element.innerText = input.value;
-}
+});
 
-input.addEventListener("keyup", changeText);
-
-function cleanInput() {
+input.addEventListener("change", function() {
   input.value = '';
-}
+});
 
-input.addEventListener("change", cleanInput);
 
-function redirectPage () {
+myWebpage.addEventListener("dblclick", function() {
   location.href = 'https://diego-rib.github.io/';
-}
+});
 
-myWebpage.addEventListener("dblclick", redirectPage);
 
-function changeColor (event) {
+myWebpage.addEventListener("mouseover", function(event) {
   event.target.style.color = '#2fc18c';
-}
-
-function resetColor (event) {
+});
+myWebpage.addEventListener("mouseout", function(event) {
   event.target.style.color = 'white';
-}
+});
 
-myWebpage.addEventListener("mouseover", changeColor);
-myWebpage.addEventListener("mouseout", resetColor);
+
 
 function resetText(event) {
   // O Event é passado como um parâmetro para a função.
