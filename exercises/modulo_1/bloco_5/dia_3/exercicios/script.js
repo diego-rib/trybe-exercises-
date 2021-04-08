@@ -119,8 +119,6 @@ function createNewElement(tag, parent) {
 let parent = document.querySelector('.my-tasks');
 createNewElement('span', parent);
 
-document.querySelector('.my-tasks span').id = 'projects';
-document.querySelector('#projects').innerText = 'Projeto';
 
 function createTaskCaption(color, parent) {
   let newElement = document.createElement('div');
@@ -130,3 +128,17 @@ function createTaskCaption(color, parent) {
 }
 
 createTaskCaption('green', parent);
+
+let taskSelector = document.querySelector('.my-tasks');
+let selectedTask = false;
+taskSelector.addEventListener('click', function(event) {
+  if (selectedTask) {
+    event.target.classList.remove('task-selected');
+    event.target.classList.add('task');
+    selectedTask = false;
+  } else {
+    event.target.classList.remove('task');
+    event.target.classList.add('task-selected');
+    selectedTask = true;
+  }
+})
