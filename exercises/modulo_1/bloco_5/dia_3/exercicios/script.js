@@ -152,3 +152,28 @@ monthDays.addEventListener('click', function (event) {
     event.target.style.color = patternColor;
   }
 })
+
+function addAppointment() {
+  let parent = document.querySelector('.task-list');
+  let input = document.querySelector('#task-input');
+  let newText = document.createElement('li');
+  newText.innerText = input.value;
+  if ((input.value.replace(/\s/g,"")) === '') {
+    alert('Nenhum texto inserido para adicionar aos compromissos');
+  } else {
+    parent.appendChild(newText);
+  }
+  input.value = '';
+}
+
+let btnAdd = document.querySelector('#btn-add');
+btnAdd.addEventListener('click', addAppointment);
+
+let pressKeyToAddAppointment = document.querySelector('#task-input');
+pressKeyToAddAppointment.addEventListener('keyup', function(event) {
+  if (event.key === 'Enter') {
+    addAppointment(btnAdd);
+  } else {
+    return;
+  }
+})
