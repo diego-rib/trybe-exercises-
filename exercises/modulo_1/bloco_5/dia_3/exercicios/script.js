@@ -142,3 +142,13 @@ taskSelector.addEventListener('click', function(event) {
     selectedTask = true;
   }
 })
+
+monthDays.addEventListener('click', function (event) {
+  let activeTask = document.querySelector('.task-selected');
+  let patternColor = 'rgb(119,119,119)';
+  if (event.target.style.color !== activeTask.style.backgroundColor) {
+    event.target.style.color = activeTask.style.backgroundColor;
+  } else {
+    event.target.style.color = patternColor;
+  }
+})
