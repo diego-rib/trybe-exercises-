@@ -94,3 +94,18 @@ btnFriday.addEventListener('click', function() {
     btnFridayEnable = true;
   }
 });
+
+let zoomedIn = false;
+function zoomInAndOut(event) {
+  if (zoomedIn) {
+    event.target.style.fontSize = '20px';
+    zoomedIn = false;
+  } else {
+    event.target.style.fontSize = '27px';
+    zoomedIn = true;
+  }
+}
+
+let monthDays = document.querySelector('#days');
+monthDays.addEventListener('mouseover', zoomInAndOut);
+monthDays.addEventListener('mouseout', zoomInAndOut);
