@@ -110,6 +110,7 @@ let monthDays = document.querySelector('#days');
 monthDays.addEventListener('mouseover', zoomInAndOut);
 monthDays.addEventListener('mouseout', zoomInAndOut);
 
+
 function createNewElement(tag, parent) {
   let newElement = document.createElement(tag);
   parent.appendChild(newElement);
@@ -117,3 +118,15 @@ function createNewElement(tag, parent) {
 
 let parent = document.querySelector('.my-tasks');
 createNewElement('span', parent);
+
+document.querySelector('.my-tasks span').id = 'projects';
+document.querySelector('#projects').innerText = 'Projeto';
+
+function createTaskCaption(color, parent) {
+  let newElement = document.createElement('div');
+  newElement.className = 'task';
+  newElement.style.backgroundColor = color;
+  parent.appendChild(newElement);
+}
+
+createTaskCaption('green', parent);
