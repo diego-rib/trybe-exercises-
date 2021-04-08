@@ -109,3 +109,11 @@ function zoomInAndOut(event) {
 let monthDays = document.querySelector('#days');
 monthDays.addEventListener('mouseover', zoomInAndOut);
 monthDays.addEventListener('mouseout', zoomInAndOut);
+
+function createNewElement(tag, parent) {
+  let newElement = document.createElement(tag);
+  parent.appendChild(newElement);
+}
+
+let parent = document.querySelector('.my-tasks');
+createNewElement('span', parent);
