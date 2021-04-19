@@ -1,10 +1,65 @@
+const ESTADOS = ['Selecione seu estado', 'AC', 'AL', 'AM', 'AP', 'BA', 'CE', 'DF', 'ES', 'GO', 'MA', 'MG', 'MS', 'MT', 'PA', 'PB', 'PE', 'PI', 'PR', 'RJ', 'RN', 'RO', 'RR', 'RS', 'SC', 'SE', 'SP', 'TO'];
+
 const DROPDOWN_ESTADOS = document.getElementById('dropdown-estado');
-const ESTADOS = ['Acre', 'Alagoas', 'Amapá', 'Amazonas', 'Bahia', 'Ceará', 'Espírito Santo', 'Goiás', 'Maranhão', 'Mato Grosso', 'Mato Grosso do Sul', 'Minas Gerais', 'Pará', 'Paraíba', 'Paraná', 'Pernambuco', 'Piauí', 'Rio de Janeiro', 'Rio Grande do Norte', 'Rio Grande do Sul', 'Rondônia', 'Roraima', 'Santa Catarina', 'São Paulo', 'Sergipe', 'Tocantins', 'Distrito Federal'];
-const SIGLAS_ESTADOS = ['ac', 'al', 'ap', 'am', 'ba', 'ce', 'es', 'go', 'ma', 'mt', 'ms', 'mg', 'pa', 'pb', 'pr', 'pe', 'pi', 'rj', 'rn', 'rs', 'ro', 'rr', 'sc', 'sp', 'se', 'to', 'df'];
+const SUBMIT_BTN = document.getElementById('submit-btn');
 
 for (let index = 0; index < ESTADOS.length; index += 1) {
   const NEW_OPTION = document.createElement('option');
   NEW_OPTION.text = ESTADOS[index];
-  NEW_OPTION.value = SIGLAS_ESTADOS[index];
+  NEW_OPTION.value = ESTADOS[index];
   DROPDOWN_ESTADOS.appendChild(NEW_OPTION);
 }
+
+var picker = new Pikaday({ 
+  field: document.getElementById('datepicker'),
+  format: 'D MMM YYYY',
+  onSelect: function() {
+    console.log(this.getMoment().format('Do MMMM YYYY'));
+  }
+});
+
+function checkCPF() {
+  const CPF = document.getElementById('input-cpf').value;
+  for(let index = 0; index < 11; index += 1) {
+    if(!parseInt(CPF[index])) {
+      return false;
+    }
+  }
+  return true;
+}
+
+SUBMIT_BTN.addEventListener('click', function(event) {
+  event.preventDefault();
+  submitHandler();
+  if(!checkCPF()) {
+    alert('CPF inválido.');
+  } else {
+    const FORM_ELEMENTS = document.querySelectorAll('input');
+    for(let index = 0; index < FORM_ELEMENTS.length; index += 1) {
+      if(FORM_ELEMENTS[index].type === 'radio') {
+        continue;
+      }
+      const NEW_DIV = document.createElement('div');
+      NEW_DIV.className = 'field';
+      NEW_DIV.innerText = FORM_ELEMENTS[index].value;
+      document.getElementById('show-curriculum').appendChild(NEW_DIV);
+    }
+  }
+});
+
+new window.JustValidate('.js-form', {
+  rules: {
+    name: {
+      required: true,
+      maxLength: 40
+    },
+    email: {
+      required: true,
+      email: true,
+      maxLength: 50
+    },
+    address: {
+      required: true
+    },
+  },
+});
