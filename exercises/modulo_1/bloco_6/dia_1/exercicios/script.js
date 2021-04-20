@@ -30,7 +30,6 @@ function checkCPF() {
 
 SUBMIT_BTN.addEventListener('click', function(event) {
   event.preventDefault();
-  submitHandler();
   if(!checkCPF()) {
     alert('CPF inválido.');
   } else {
@@ -47,19 +46,45 @@ SUBMIT_BTN.addEventListener('click', function(event) {
   }
 });
 
-new window.JustValidate('.js-form', {
-  rules: {
+new window.JustValidate('.form', {
+  Rules: {
+    email: {
+        required: true,
+        email: true
+    },
     name: {
       required: true,
       maxLength: 40
     },
-    email: {
-      required: true,
-      email: true,
-      maxLength: 50
+    endereco: {
+        required: true,
+        maxLength: 200
     },
-    address: {
+    cidade: {
+        required: true,
+        maxLength: 28
+    },
+    estado: {
+        required: true
+    },
+    radioCasa: {
+        required: true
+    },
+    resumoCurriculum: {
+      maxLength: 1000,
       required: true
     },
-  },
+    cargo: {
+      required: true,
+      maxLength: 40
+    },
+    descricaoCargo: {
+      required: true,
+      maxLength: 500
+    },
+    cpf: {
+      required: true,
+      maxLength: 11
+    }
+}
 });
