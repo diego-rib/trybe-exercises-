@@ -7,21 +7,22 @@
   <title>Forms</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="validation/validation.min.css">
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
   <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
+  <link href="popup-validation/validation.min.css" rel="stylesheet">
+  <script src="popup-validation/validation.min.js"></script> 
 </head>
 <body>
   <form action="" method="GET" id="form" class="form">
     <div class="section">
       
       <p class="subtitle is-3 has-text-centered">Dados Pessoais</p>
-      
+
       <div class="field">
         <label class="label" for="input-name">Nome:</label>
 
         <div class="control">
-          <input class="input" type="text" name="name" id="input-name" data-validate-field="name">
+          <input class="input validate" type="text" name="name" id="input-name" maxlength="40" data-validate="required">
         </div>
 
       </div>
@@ -31,7 +32,7 @@
         <label class="label" for="input-email">Email:</label>
 
         <div class="control">
-          <input class="input" type="email" name="email" id="input-email" data-validate-field="email">
+          <input class="input validate" type="email" name="email" id="input-email" maxlength="50" data-validate="required, email">
         </div>
 
       </div>
@@ -41,7 +42,7 @@
         <label class="label" for="input-cpf">Cpf:</label>
 
         <div class="control">
-          <input class="input" type="text" name="cpf" id="input-cpf" data-validate-field="cpf">
+          <input class="input validate" type="text" name="cpf" id="input-cpf" maxlength="11" data-validate="required">
         </div>
 
       </div>
@@ -51,7 +52,7 @@
         <label class="label" for="input-endereco">Endereço:</label>
 
         <div class="control">
-          <input class="input" type="text" name="endereco" id="input-endereco" data-validate-field="endereco">
+          <input class="input validate" type="text" name="endereco" id="input-endereco" maxlength="200" data-validate="required">
         </div>
 
       </div>
@@ -61,7 +62,7 @@
         <label class="label" for="input-cidade">Cidade:</label>
 
         <div class="control">
-          <input class="input" type="text" name="cidade" id="input-cidade" data-validate-field="cidade">
+          <input class="input validate" type="text" name="cidade" id="input-cidade" maxlength="28" data-validate="required">
         </div>
 
       </div>
@@ -72,7 +73,7 @@
 
         <div class="control">
           <div class="select">
-            <select name="estado" id="dropdown-estado" data-validate-field="estado"></select>
+            <select class="validate" name="estado" id="dropdown-estado" data-validate="required"></select>
           </div>
         </div>
 
@@ -80,16 +81,16 @@
 
       <div class="field">
 
-        <div class="control">
+        <div class="control" id="radio1">
 
           <label class="label">Tipo de moradia:</label>
-          <label class="radio">
-          <input type="radio" name="moradia" value="casa" id="radio-casa" data-validate-field="radioCasa">
+          <label class="radio validate">
+          <input type="radio" name="moradia" value="Casa" id="radio-casa">
             Casa
           </label>
 
-          <label class="radio">
-            <input type="radio" name="moradia" value="apartamento" id="radio-apart" data-validate-field="radioCasa">
+          <label class="radio validate">
+            <input type="radio" name="moradia" value="Apartamento" id="radio-apart">
             Apartamento
           </label>
 
@@ -108,7 +109,7 @@
         <label class="label" for="text-curriculum">Resumo do Currículo</label>
 
         <div class="control">
-          <textarea class="textarea" name="curriculum" id="text-curriculum" cols="50" rows="20" data-validate-field="resumoCurriculum"></textarea>
+          <textarea class="textarea validate" name="curriculum" id="text-curriculum" cols="50" rows="20" maxlength="1000" data-validate="required"></textarea>
         </div>
 
       </div>
@@ -118,7 +119,7 @@
         <label class="label" for="text-cargo">Cargo:</label>
 
         <div class="control">
-          <input class="input" type="text" name="cargo" id="text-cargo" data-validate-field="cargo">
+          <input class="input validate" type="text" name="cargo" id="text-cargo" maxlength="1000" data-validate="required">
         </div>
 
       </div>
@@ -128,7 +129,7 @@
         <label class="label" for="cargo-description">Descrição do cargo:</label>
 
         <div class="control">
-          <input class="input" type="text" name="cargo-description" id="cargo-description" data-validate-field="descricaoCargo">
+          <input class="input validate" type="text" name="cargo-description" id="cargo-description" data-validate="required">
         </div>
 
       </div>
@@ -138,7 +139,7 @@
         <label class="label" for="data-inicio">Data de início:</label>
 
         <div class="control">
-          <input class="input" type="text" name="data-inicio" id="datepicker">
+          <input class="input" type="text" name="data-inicio" id="datepicker" autocomplete="off" required>
         </div>
 
       </div>
@@ -158,7 +159,6 @@
 
   <div class="field" id="show-curriculum"></div>
 
-  <script src="js/just-validate.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

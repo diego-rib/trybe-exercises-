@@ -1,4 +1,4 @@
-const ESTADOS = ['Selecione seu estado', 'AC', 'AL', 'AM', 'AP', 'BA', 'CE', 'DF', 'ES', 'GO', 'MA', 'MG', 'MS', 'MT', 'PA', 'PB', 'PE', 'PI', 'PR', 'RJ', 'RN', 'RO', 'RR', 'RS', 'SC', 'SE', 'SP', 'TO'];
+const ESTADOS = ['AC', 'AL', 'AM', 'AP', 'BA', 'CE', 'DF', 'ES', 'GO', 'MA', 'MG', 'MS', 'MT', 'PA', 'PB', 'PE', 'PI', 'PR', 'RJ', 'RN', 'RO', 'RR', 'RS', 'SC', 'SE', 'SP', 'TO'];
 
 const DROPDOWN_ESTADOS = document.getElementById('dropdown-estado');
 const SUBMIT_BTN = document.getElementById('submit-btn');
@@ -18,26 +18,22 @@ var picker = new Pikaday({
   }
 });
 
-function checkCPF() {
-  const CPF = document.getElementById('input-cpf').value;
+document.getElementById('input-cpf').addEventListener('blur', event => {
+  const CPF = event.target.value;
   for(let index = 0; index < 11; index += 1) {
     if(!parseInt(CPF[index])) {
-      return false;
+      validation.show(event.target, 'Cpf inválido');
     }
   }
-  return true;
-}
+});
 
 SUBMIT_BTN.addEventListener('click', function(event) {
   event.preventDefault();
-  if(!checkCPF()) {
-    alert('CPF inválido.');
-  } else {
-    const FORM_ELEMENTS = document.querySelectorAll('input');
-    for(let index = 0; index < FORM_ELEMENTS.length; index += 1) {
-      if(FORM_ELEMENTS[index].type === 'radio') {
-        continue;
-      }
+  const FORM_ELEMENTS = document.querySelectorAll('input');
+  for(let index = 0; index < FORM_ELEMENTS.length; index += 1) {
+    if(FORM_ELEMENTS[index].type === 'radio') {
+      continue;
+    } else {
       const NEW_DIV = document.createElement('div');
       NEW_DIV.className = 'field';
       NEW_DIV.innerText = FORM_ELEMENTS[index].value;
@@ -46,45 +42,4 @@ SUBMIT_BTN.addEventListener('click', function(event) {
   }
 });
 
-new window.JustValidate('.form', {
-  Rules: {
-    email: {
-        required: true,
-        email: true
-    },
-    name: {
-      required: true,
-      maxLength: 40
-    },
-    endereco: {
-        required: true,
-        maxLength: 200
-    },
-    cidade: {
-        required: true,
-        maxLength: 28
-    },
-    estado: {
-        required: true
-    },
-    radioCasa: {
-        required: true
-    },
-    resumoCurriculum: {
-      maxLength: 1000,
-      required: true
-    },
-    cargo: {
-      required: true,
-      maxLength: 40
-    },
-    descricaoCargo: {
-      required: true,
-      maxLength: 500
-    },
-    cpf: {
-      required: true,
-      maxLength: 11
-    }
-}
-});
+validation.init('#form');
