@@ -83,3 +83,9 @@ p strong {
     display: initial;
   }
 }
+
+@media screen and (max-width: 500px) {
+  p.trick {
+    color: black;
+  }
+}
