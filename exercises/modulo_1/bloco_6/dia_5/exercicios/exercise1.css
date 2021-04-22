@@ -1,14 +1,14 @@
-body {
-  font-size: 18px;
+/* body {
+
 }
 
 h1 {
-  font-size: 1.6em;
+
 }
 
 h2 {
-  font-size: 1.3em;
-}
+
+} */
 
 img {
     max-width: 100%;
@@ -16,4 +16,26 @@ img {
 
 figure {
     margin: 0;
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    font-size: 20px;
+  }
+  
+  h1 {
+    font-size: 1.3em;
+  }
+  
+  h2 {
+    font-size: 1.1em;
+  }
+  
+  img {
+      max-width: 100%;
+  }
+  
+  figure {
+      margin: 50px 0;
+  }
 }
