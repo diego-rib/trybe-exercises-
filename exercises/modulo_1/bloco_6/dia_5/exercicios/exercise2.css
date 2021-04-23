@@ -1,0 +1,92 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-size: 18px;
+}
+
+header {
+  background-color: black;
+  color: aliceblue;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 7px 20px;
+}
+
+header p , header ul {
+  margin: 10px 0;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+}
+
+header nav ul li {
+  margin-left: 10px;
+}
+
+main {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.aside-two h2 {
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.aside-two ul {
+  list-style: none;
+  display: inline-block;
+}
+
+.aside-two ul li {
+  width: fit-content;
+  display: inline-block;
+  margin: 10px 20px;
+}
+
+.aside-one h2 {
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.aside-one ul {
+  display: flex;
+  flex-flow: column nowrap;
+  margin: 20px auto;
+}
+
+.aside-one ul li {
+  min-height: 30px;
+}
+
+.main-content h1 {
+  margin: 50px 0;
+  font-size: 1.8em;
+  text-align: center;
+}
+
+.main-content p {
+  margin: 30px 0;
+}
+
+footer {
+  padding: 5px 30px;
+  background-color: black;
+  color: white;
+}
+
+@media screen and (min-width: 600px) and (max-width: 1300px) {
+}
+
+@media screen and (min-width: 1300px) {
+}
