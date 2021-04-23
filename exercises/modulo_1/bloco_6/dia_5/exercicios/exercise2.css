@@ -6,13 +6,20 @@ html {
   box-sizing: inherit;
 }
 
-body {
+* {
+  margin: 0;
+  padding: 0;
   font-size: 18px;
 }
 
+main {
+  width: 80%;
+  margin: 20px auto 0;
+}
+
 header {
-  background-color: black;
-  color: aliceblue;
+  background-color: #3f3f3f;
+  color: #fafafa;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -20,7 +27,8 @@ header {
   padding: 7px 20px;
 }
 
-header p , header ul {
+header p , header ul li {
+  font-size: 1.2em;
   margin: 10px 0;
 }
 
@@ -33,60 +41,91 @@ header nav ul li {
   margin-left: 10px;
 }
 
-main {
-  width: 80%;
-  margin: 0 auto;
+.asides-wrapper {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.aside-two {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
 }
 
 .aside-two h2 {
   font-size: 1.5em;
-  text-align: center;
+  margin: 20px 0;
 }
 
 .aside-two ul {
   list-style: none;
-  display: inline-block;
 }
 
 .aside-two ul li {
+  font-size: 1.1em;
   width: fit-content;
-  display: inline-block;
+  display: block;
   margin: 10px 20px;
 }
 
+.aside-one {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .aside-one h2 {
+  margin: 30px 0 40px;
   font-size: 1.5em;
   text-align: center;
 }
 
 .aside-one ul {
   display: flex;
-  flex-flow: column nowrap;
+  flex-flow: column;
   margin: 20px auto;
 }
 
 .aside-one ul li {
-  min-height: 30px;
+  font-size: 1.1em;
+  min-height: 1.7em;
+  text-align: left;
 }
 
 .main-content h1 {
-  margin: 50px 0;
-  font-size: 1.8em;
+  margin: 30px 0 50px;
+  font-size: 1.7em;
   text-align: center;
 }
 
 .main-content p {
+  font-size: 1.1em;
+  line-height: 1.5em;
   margin: 30px 0;
 }
 
 footer {
   padding: 5px 30px;
-  background-color: black;
-  color: white;
+  background-color: #3f3f3f;
+  color: #fafafa;
 }
 
-@media screen and (min-width: 600px) and (max-width: 1300px) {
+footer h3 {
+  font-size: 1.3em;
+  text-align: center;
+  padding: 10px 0;
 }
 
-@media screen and (min-width: 1300px) {
+footer p {
+  line-height: 1.5em;
+  margin: 10px 0;
+}
+
+@media screen and (min-width: 680px) {
+
+  * {
+    font-size: 20px;
+  }
+
 }
