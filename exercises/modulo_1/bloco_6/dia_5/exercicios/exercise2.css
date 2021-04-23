@@ -129,3 +129,40 @@ footer p {
   }
 
 }
+
+@media screen and (min-width: 1000px) {
+
+  * {
+    font-size: 22px;
+  }
+
+  header {
+    padding: 7px 60px;
+  }
+
+  main {
+    width: 90%;
+  }
+
+  .asides-wrapper {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .main-content {
+    width: 85%;
+    margin: 0 auto;
+  }
+
+  .main-content p {
+    line-height: 1.8em;
+    margin: 50px 0;
+  }
+
+  footer p {
+    width: 70%;
+    margin: 10px auto;
+  }
+
+}
