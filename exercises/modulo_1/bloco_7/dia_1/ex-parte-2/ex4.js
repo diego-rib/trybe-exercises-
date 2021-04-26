@@ -15,4 +15,4 @@ function skillsConcat(frase) {
   return `${frase} Minhas cinco principais habilidades são: ${skills.join(', ')}; ... #goTrybe".`;
 }
 
-console.log(skillsConcat(subsPalavra('Daniel O Brabo')));
+console.log(skillsConcat(subsPalavra('Diego')));
