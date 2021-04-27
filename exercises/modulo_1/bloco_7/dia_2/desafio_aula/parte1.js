@@ -3,9 +3,7 @@ const obj = {
   lastname: 'ribeiro'
 };
 
-function addObjectProp (object, key, value) {
-  return object[key] = value;
-}
+const addObjectProp = (object, key, value) => (object[key] = value);
 
 console.log(obj);
 
