@@ -41,8 +41,10 @@ const customerInfo = (order) => (
 customerInfo(order);
 
 const orderModifier = (order) => {
-  // Adicione abaixo as informações necessárias.
+  const newOrder = Object.assign({}, order);
+  newOrder.name = 'Luiz Silva';
+  newOrder.payment.total = 50;
+  return `Olá ${newOrder.name}, o total do pedido de muzzarella, calabresa e Coca-Cola Zero é ${newOrder.payment.total}.`
+};
 
-}
-
-orderModifier(order);
+console.log(orderModifier(order));
