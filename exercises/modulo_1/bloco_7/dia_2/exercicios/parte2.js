@@ -25,3 +25,21 @@ const listKeys = (object) => Object.keys(object);
 const measureObject = (object) => listKeys(object).length;
 
 const listValues = (object) => Object.values(object);
+
+const AllLessons = {
+  lesson1: {},
+  lesson2: {},
+  lesson3: {},
+};
+
+const assignLessons = () => {
+  Object.assign(AllLessons.lesson1, lesson1);
+  Object.assign(AllLessons.lesson2, lesson2);
+  Object.assign(AllLessons.lesson3, lesson3);
+};
+
+addProp(lesson2, 'turno', 'manhã');
+
+assignLessons();
+
+console.table(AllLessons);
