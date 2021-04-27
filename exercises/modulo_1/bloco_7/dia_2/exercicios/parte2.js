@@ -44,6 +44,8 @@ const assignLessons = () => {
   Object.assign(AllLessons.lesson3, lesson3);
 };
 
+assignLessons();
+
 // Exercicio 6
 const totalStudents = () => {
   let total = 0;
@@ -59,3 +61,58 @@ const getValueByNumber = (lesson, position) => listValues(lesson)[position];
 
 // Exercicio 8
 const verifyPair = (lesson, key, value) => listKeys(lesson).includes(key) && lesson[key] === value;
+
+
+// Bônus
+
+// Exercicio 1
+const countProfessorStudents = (lessons, professor, materia) => {
+  let total = 0;
+
+  const keys = listKeys(lessons);
+
+  for (let index = 0; index < keys.length; index += 1) {
+
+    const currentLesson = lessons[keys[index]];
+    const values = listValues(currentLesson);
+
+    if (values.includes(materia) && values.includes(professor)) {
+      total += currentLesson['numeroEstudantes'];
+    }
+
+  }
+
+  return total;
+}
+
+// Exercicio 2
+const checkClasses = (lessons, professor) => {
+  let materias = [];
+  const keys = listKeys(lessons);
+  for (let index = 0; index < keys.length; index += 1) {
+    if (listValues(lessons[keys[index]]).includes(professor)) {
+      materias.push(lessons[keys[index]]['materia']);
+    }
+  }
+  return materias.sort();
+}
+
+const checkTotalStudents = (teacher, classes) => {
+  let total = 0;
+  const aulas = [...new Set(classes)];
+  const keys = listKeys(AllLessons);
+  for (let index = 0; index < aulas.length; index += 1) {
+    total += countProfessorStudents(AllLessons, teacher, aulas[index]);
+  }
+  return total;
+};
+
+const createReport = (lessons, teacher) => {
+  const classes = checkClasses(lessons, teacher);
+  const students = checkTotalStudents(teacher, classes);
+  return {
+    professor: teacher, 
+    aulas: classes, 
+    estudantes: students,
+  };
+};
