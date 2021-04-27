@@ -43,3 +43,14 @@ addProp(lesson2, 'turno', 'manhã');
 assignLessons();
 
 console.table(AllLessons);
+
+const totalStudents = () => {
+  let total = 0;
+  const keys = listKeys(AllLessons);
+  for (let index = 0; index < keys.length; index += 1) {
+    total += AllLessons[keys[index]]['numeroEstudantes'];
+  }
+  return total;
+};
+
+console.log(totalStudents());
