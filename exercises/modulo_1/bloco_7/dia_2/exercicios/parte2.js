@@ -18,14 +18,20 @@ const lesson3 = {
   turno: 'noite',
 };
 
+// Exercicio 1
 const addProp = (object, key, value) => (object[key] = value);
+addProp(lesson2, 'turno', 'manhã');
 
+// Exercicio 2
 const listKeys = (object) => Object.keys(object);
 
+// Exercicio 3
 const measureObject = (object) => listKeys(object).length;
 
+// Exercicio 4
 const listValues = (object) => Object.values(object);
 
+// Exercicio 5
 const AllLessons = {
   lesson1: {},
   lesson2: {},
@@ -38,12 +44,7 @@ const assignLessons = () => {
   Object.assign(AllLessons.lesson3, lesson3);
 };
 
-addProp(lesson2, 'turno', 'manhã');
-
-assignLessons();
-
-console.table(AllLessons);
-
+// Exercicio 6
 const totalStudents = () => {
   let total = 0;
   const keys = listKeys(AllLessons);
@@ -53,4 +54,8 @@ const totalStudents = () => {
   return total;
 };
 
-console.log(totalStudents());
+// Exercicio 7
+const getValueByNumber = (lesson, position) => listValues(lesson)[position];
+
+// Exercicio 8
+const verifyPair = (lesson, key, value) => listKeys(lesson).includes(key) && lesson[key] === value;
