@@ -19,3 +19,5 @@ const lesson3 = {
 };
 
 const addProp = (object, key, value) => (object[key] = value);
+
+const listKey = (object) => Object.keys(object);
