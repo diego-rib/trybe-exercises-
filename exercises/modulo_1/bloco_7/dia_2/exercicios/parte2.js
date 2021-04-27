@@ -23,3 +23,5 @@ const addProp = (object, key, value) => (object[key] = value);
 const listKeys = (object) => Object.keys(object);
 
 const measureObject = (object) => listKeys(object).length;
+
+const listValues = (object) => Object.values(object);
