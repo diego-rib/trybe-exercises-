@@ -35,11 +35,11 @@ function myRemove(arr, item) {
 
 // Testes
 let array = [1, 2, 3, 4];
-const arrayBackup = array;
 
 assert.deepStrictEqual(myRemove(array, 3), [1, 2, 4]);
 assert.notDeepStrictEqual(myRemove(array, 3), [1, 2, 3, 4]);
-assert.strictEqual(array, arrayBackup);
+myRemove(array, 3);
+assert.deepStrictEqual(array, [1, 2, 3, 4], 'O array é alterado durante a função');
 assert.deepStrictEqual(myRemove(array, 5), [1, 2, 3, 4]);
 
 
@@ -58,4 +58,7 @@ function myRemoveWithoutCopy(arr, item) {
 
 // Testes
 
-assert.deepStrictEqual(myRemoveWithoutCopy(array, 3), [1, 2, 4]);
+assert.deepStrictEqual(myRemoveWithoutCopy([1, 2, 3, 4], 3), [1, 2, 4]);
+assert.notDeepStrictEqual(myRemoveWithoutCopy([1, 2, 3, 4], 3), [1, 2, 3, 4]);
+myRemoveWithoutCopy(array, 3);
+assert.deepStrictEqual(array, [1, 2, 3, 4], 'O array é alterado durante a função');
