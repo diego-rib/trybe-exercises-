@@ -77,3 +77,4 @@ function myFizzBuzz(num) {
 // Testes
 assert.strictEqual(myFizzBuzz(15), 'fizzbuzz');
 assert.strictEqual(myFizzBuzz(12), 'fizz');
+assert.strictEqual(myFizzBuzz(20), 'buzz');
