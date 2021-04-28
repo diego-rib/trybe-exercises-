@@ -38,3 +38,4 @@ const arrayBackup = array;
 assert.deepStrictEqual(myRemove(array, 3), [1, 2, 4]);
 assert.notDeepStrictEqual(myRemove(array, 3), [1, 2, 3, 4]);
 assert.strictEqual(array, arrayBackup);
+assert.deepStrictEqual(myRemove(array, 5), [1, 2, 3, 4];
