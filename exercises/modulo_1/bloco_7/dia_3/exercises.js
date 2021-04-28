@@ -63,3 +63,16 @@ assert.notDeepStrictEqual(myRemoveWithoutCopy([1, 2, 3, 4], 3), [1, 2, 3, 4]);
 myRemoveWithoutCopy(array, 3);
 // assert.deepStrictEqual(array, [1, 2, 3, 4], 'O array é alterado durante a função'); // A mensagem de erro é exibida corretamente
 assert.deepStrictEqual(myRemoveWithoutCopy([1, 2, 3, 4], 5), [1, 2, 3, 4]);
+
+
+// Exercicio 4
+function myFizzBuzz(num) {
+  if (typeof num !== 'number') return false;
+  if (num % 3 === 0 && num % 5 === 0) return 'fizzbuzz';
+  if (num % 3 === 0) return 'fizz';
+  if (num % 5 === 0) return 'buzz';
+  return num;
+}
+
+// Testes
+assert.strictEqual(myFizzBuzz(15), 'fizzbuzz');
