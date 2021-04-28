@@ -14,7 +14,7 @@ function sum(a, b) {
 // Testes
 assert.strictEqual(sum(4, 5), 9);
 assert.strictEqual(sum(0, 0), 0);
-// sum(4, '5');
+// sum(4, '5'); // A mensagem de erro é exibida corretamente
 assert.throws(
   () => {
     sum(4, '5');
@@ -61,4 +61,5 @@ function myRemoveWithoutCopy(arr, item) {
 assert.deepStrictEqual(myRemoveWithoutCopy([1, 2, 3, 4], 3), [1, 2, 4]);
 assert.notDeepStrictEqual(myRemoveWithoutCopy([1, 2, 3, 4], 3), [1, 2, 3, 4]);
 myRemoveWithoutCopy(array, 3);
-assert.deepStrictEqual(array, [1, 2, 3, 4], 'O array é alterado durante a função');
+// assert.deepStrictEqual(array, [1, 2, 3, 4], 'O array é alterado durante a função'); // A mensagem de erro é exibida corretamente
+assert.deepStrictEqual(myRemoveWithoutCopy([1, 2, 3, 4], 5), [1, 2, 3, 4]);
