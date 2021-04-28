@@ -16,3 +16,9 @@ const obj3 = {
 };
 
 // Testes
+
+assert.deepStrictEqual(obj1, obj2, 'São diferentes'); // São idênticos
+
+assert.deepStrictEqual(obj1, obj3, 'São diferentes'); // São diferentes
+
+assert.deepStrictEqual(obj2, obj3, 'São diferentes'); // São diferentes
