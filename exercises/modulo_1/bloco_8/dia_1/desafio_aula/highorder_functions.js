@@ -1,3 +1,3 @@
 const acordando = () => console.log('Acordando!!');
 
-acordando();
+const cafe = () => console.log('Bora tomar café!!');
