@@ -11,5 +11,3 @@ const newEmployees = (register) => {
   }
   return employees;
 };
-
-console.table(newEmployees(register));
