@@ -1,5 +1,11 @@
-const acordando = () => console.log('Acordando!!');
+const wakeUp = () => console.log('Acordando!!');
 
-const cafe = () => console.log('Bora tomar café!!');
+const breakfast = () => console.log('Bora tomar café!!');
 
-const dormir = () => console.log('Partiu dormir!!');
+const sleep = () => console.log('Partiu dormir!!');
+
+const doingThings = (action) => action();
+
+doingThings(wakeUp);
+doingThings(breakfast);
+doingThings(sleep);
