@@ -96,6 +96,9 @@ const gameActions = {
 const startGame = () => {
   let alive = true;
   let count = 1;
+  console.log(`<--- Turno ${count - 1} --->\n`);
+  console.log(gameActions.finalState());
+  console.log();
   while (alive) {
     gameActions.turnWarrior(warriorDmg);
     gameActions.turnMage(warriorDmg);
