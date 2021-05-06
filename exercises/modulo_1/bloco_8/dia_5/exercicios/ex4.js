@@ -28,7 +28,7 @@ const people = [
   },
 ];
 
-const filterPeople = (people) => people.filter(person => person.bornIn > 1900 && person.bornIn < 2000);
+const filterPeople = (people) => people.filter(({ bornIn }) => bornIn > 1900 && bornIn < 2000);
 
 const filteredPeople = filterPeople(people);
 
