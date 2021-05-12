@@ -1,18 +1,19 @@
 // apiScript.js     
 const API_URL = 'https://icanhazdadjoke.com/';
 
-const fetchJoke = () => {
+async function fetchJoke() {
   const myObject = {
     method: 'GET',
     headers: { 'Accept': 'application/json' }
   };
 
+  const joke = await fetch(API_URL, myObject)
+  .then(response => response.json())
+  .then(response => response.joke);
+  
   const container = document.querySelector('#jokeContainer');
-  fetch(API_URL, myObject)
-    .then(response => response.json())
-    .then(({ joke }) => {
-      container.innerText = joke;
-    });
+  container.innerText = joke;
+
 };
 
 async function lessThan8000() {
@@ -23,15 +24,25 @@ async function lessThan8000() {
     }
     const sum = squaredNumbers.reduce((acc, cur) => acc + cur, 0);
     if (sum < 8000) {
-      resolve('Promise resolvida');
+      resolve(sum);
     } else {
-      reject('Promise rejeitada');
+      reject('É mais de oito mil! Essa promise deve estar quebrada!');
     }
   })
-  .then(msg => console.log(msg))
+  .then(num => {
+    const divs = [2, 3, 5, 10];
+    sumAll(divs.map(div => num / div));
+  })
   .catch(msg => console.log(msg));
 }
 
-lessThan8000();
+function sumAll(numbers) {
+  const result = numbers.reduce((acc, cur) => acc + cur);
+  console.log(Math.round(result));
+}
 
-// window.onload = () => fetchJoke();
+
+window.onload = () => {
+  fetchJoke();
+  lessThan8000();
+}
