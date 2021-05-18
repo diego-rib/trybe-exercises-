@@ -12,6 +12,8 @@ function myRemoveWithoutCopy(arr, item) {
   return arr;
 }
 
+module.exports = myRemoveWithoutCopy;
+
 // Testes
 
 assert.deepStrictEqual(myRemoveWithoutCopy([1, 2, 3, 4], 3), [1, 2, 4]);

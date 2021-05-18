@@ -8,6 +8,8 @@ function myFizzBuzz(num) {
   return num;
 }
 
+module.exports = myFizzBuzz;
+
 // Testes
 
 assert.strictEqual(myFizzBuzz(15), 'fizzbuzz');
