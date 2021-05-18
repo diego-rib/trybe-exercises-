@@ -4,23 +4,23 @@ const myFizzBuzz = require('./ex4');
 describe('Testes função myFizzBuzz', () => {
 
   it('Numero divisivel por 3 e 5 espera o retorno "fizzbuzz"', () => {
-    expect('fizzbuzz').toEqual(myFizzBuzz(15));
+    expect(myFizzBuzz(15)).toEqual('fizzbuzz');
   });
 
   it('Numero divisivel por 3 espera o retorno "fizz"', () => {
-    expect('fizz').toEqual(myFizzBuzz(12));
+    expect(myFizzBuzz(12)).toEqual('fizz');
   });
 
   it('Numero divisivel por 5 espera o retorno "buzz"', () => {
-    expect('buzz').toEqual(myFizzBuzz(20));
+    expect(myFizzBuzz(20)).toEqual('buzz');
   });
 
   it('Numero não divisivel por 3 e 5 e espera que ele mesmo seja retornado', () => {
-    expect(8).toEqual(myFizzBuzz(8));
+    expect(myFizzBuzz(8)).toEqual(8);
   });
 
   it('Passada uma string como parâmetro espera que retorna "false"', () => {
-    expect(false).toEqual(myFizzBuzz('olá'));
+    expect(myFizzBuzz('olá')).toEqual(false);
   });
 
 });
