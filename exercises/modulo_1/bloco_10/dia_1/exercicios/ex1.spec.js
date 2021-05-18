@@ -22,4 +22,12 @@ describe('Testes das funções encode e decode', () => {
     expect('O peito do pé de Pedro é preto').toEqual(decode('O peito do pé de Pedro é preto'));
   });
 
+  it('String retornada pela função encode têm o mesmo número de caracteres que a string passada como parâmetro', () => {
+    expect(30).toEqual(encode('O peito do pé de Pedro é preto').length);
+  });
+
+  it('String retornada pela função decode têm o mesmo número de caracteres que a string passada como parâmetro', () => {
+    expect(30).toEqual(decode('O p23t4 d4 pé d2 P2dr4 é pr2t4').length);
+  });
+
 });
