@@ -10,6 +10,8 @@ function myRemove(arr, item) {
   return newArr;
 }
 
+module.exports = myRemove;
+
 // Testes
 
 let array = [1, 2, 3, 4];

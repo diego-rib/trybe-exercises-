@@ -22,3 +22,5 @@ assert.throws(
   },
   /^Error: parameters must be numbers$/
 );
+
+module.exports = sum;
