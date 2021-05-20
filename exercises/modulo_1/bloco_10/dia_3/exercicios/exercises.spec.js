@@ -61,33 +61,67 @@ describe('Testa a função randomNumber', () => {
     });
   });
 
-  describe('Exercicio 3 função modificada novamente', () => {  
-    beforeEach(() => {
-      randomNumber = jest.fn((a, b, c) => a * b * c);
+  describe('Exercicio 3 função modificada novamente', () => {
+
+    describe('Parte 1 que testa:', () => {
+      beforeEach(() => {
+        randomNumber = jest.fn((a, b, c) => a * b * c);
+      });
+  
+      it('a chamada', () => {
+        randomNumber();
+        expect(randomNumber).toHaveBeenCalled();
+      });
+  
+      it('retorno', () => {
+        expect(randomNumber(25, 5, 2)).toBe(250);
+      });
+  
+      it('quantas vezes foi chamada', () => {
+        randomNumber();
+        randomNumber();
+        expect(randomNumber).toHaveBeenCalledTimes(2);
+        randomNumber();
+        expect(randomNumber).toHaveBeenCalledTimes(3);
+      });
+  
+      it('parametros que foi chamada [(10, 2, 1), (25, 5, 0)]', () => {
+        randomNumber(10, 2, 1);
+        randomNumber(25, 5, 2);
+        expect(randomNumber).toHaveBeenCalledWith(10, 2, 1);
+        expect(randomNumber).toHaveBeenCalledWith(25, 5, 2);
+      });
+    });
+    
+    describe('Parte 2 que testa:', () => {
+      beforeEach(() => {
+        randomNumber = jest.fn((value) => 2 * value);
+      });
+  
+      it('a chamada', () => {
+        randomNumber();
+        expect(randomNumber).toHaveBeenCalled();
+      });
+  
+      it('retorno', () => {
+        expect(randomNumber(25)).toBe(50);
+      });
+  
+      it('quantas vezes foi chamada', () => {
+        randomNumber();
+        randomNumber();
+        expect(randomNumber).toHaveBeenCalledTimes(2);
+        randomNumber();
+        expect(randomNumber).toHaveBeenCalledTimes(3);
+      });
+  
+      it('parametros que foi chamada [10, 25]', () => {
+        randomNumber(10);
+        randomNumber(25);
+        expect(randomNumber).toHaveBeenCalledWith(10);
+        expect(randomNumber).toHaveBeenCalledWith(25);
+      });
     });
 
-    it('a chamada', () => {
-      randomNumber();
-      expect(randomNumber).toHaveBeenCalled();
-    });
-
-    it('retorno', () => {
-      expect(randomNumber(25, 5, 2)).toBe(250);
-    });
-
-    it('quantas vezes foi chamada', () => {
-      randomNumber();
-      randomNumber();
-      expect(randomNumber).toHaveBeenCalledTimes(2);
-      randomNumber();
-      expect(randomNumber).toHaveBeenCalledTimes(3);
-    });
-
-    it('parametros que foi chamada [(10, 2, 1), (25, 5, 0)]', () => {
-      randomNumber(10, 2, 1);
-      randomNumber(25, 5, 2);
-      expect(randomNumber).toHaveBeenCalledWith(10, 2, 1);
-      expect(randomNumber).toHaveBeenCalledWith(25, 5, 2);
-    });
   });
 });
