@@ -36,11 +36,11 @@ describe('Testa a função randomNumber', () => {
     });
 
     it('retorno', () => {
-      expect(randomNumber(2, 1)).toBe(1);
+      expect(randomNumber(2, 1)).toBe(2);
     });
 
     it('quantas vezes foi chamada', () => {
-      // randomNumber();
+      randomNumber();
       randomNumber();
       expect(randomNumber).toHaveBeenCalledTimes(2);
       randomNumber();
@@ -50,8 +50,8 @@ describe('Testa a função randomNumber', () => {
     it('parametros que foi chamada [(10, 2), (25, 5)]', () => {
       randomNumber(10, 2);
       randomNumber(25, 5);
-      expect(randomNumber).toHaveBeenCalledWith(10, 1);
-      expect(randomNumber).toHaveBeenCalledWith(25, 2);
-    })
+      expect(randomNumber).toHaveBeenCalledWith(10, 2);
+      expect(randomNumber).toHaveBeenCalledWith(25, 5);
+    });
   });
 });
