@@ -52,14 +52,16 @@ export default class Form extends Component {
             onChange={this.handleChange}
             />
           </label>
-          <label>
-            <input name="seeking" type="checkbox" onChange={this.handleChange} />
-            CheckBox
-          </label>
-          <label>
-            Upload
-            <input type="file" ref={this.fileInput} onChange={this.showImage} />
-          </label>
+          <fieldset>
+            <label>
+              <input name="seeking" type="checkbox" onChange={this.handleChange} />
+              CheckBox
+            </label>
+            <label>
+              Upload
+              <input type="file" ref={this.fileInput} onChange={this.showImage} />
+            </label>
+          </fieldset>
         </form>
       </div>
     )
