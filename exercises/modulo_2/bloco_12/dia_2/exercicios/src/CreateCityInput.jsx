@@ -1,4 +1,5 @@
-import { Component } from 'react'
+import { Component } from 'react';
+import 'bulma/css/bulma.css';
 
 export default class CreateCityInput extends Component {
   render() {
@@ -6,18 +7,26 @@ export default class CreateCityInput extends Component {
     let error = '';
     if (value.length === maxLength) error = 'Limite de caracteres atingido';
     return (
-      <label>
-        {name}*:
-        <input
-          className="input"
-          name={name}
-          value={value}
-          onChange={handleUserInput}
-          onBlur={handleCityInput}
-          maxLength={maxLength}
-        />
-        <span className="error">{error}</span>
-      </label>
+      <div className="field is-horizontal">
+        <div className="field-label">
+          <label className="label">{name}*:</label>
+        </div>
+        <div className="field-body">
+          <div className="field">
+            <div className="control">
+              <input
+                className="input"
+                name={name}
+                value={value}
+                onChange={handleUserInput}
+                onBlur={handleCityInput}
+                maxLength={maxLength}
+              />
+            </div>
+            <p className="help is-danger">{error}</p>
+          </div>
+        </div>
+      </div>
     )
   }
 }

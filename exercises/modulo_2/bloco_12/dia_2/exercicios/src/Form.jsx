@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import 'bulma/css/bulma.css';
 import './Form.css';
 import CreateInput from './CreateInput.jsx';
 import CreateCityInput from './CreateCityInput.jsx';
@@ -120,8 +121,8 @@ export default class Form extends Component {
     return (
       <div>
         <form className="form">
-          <h2>Formulário</h2>
-          <fieldset>
+          <h2 className="title is-3 has-text-centered is-spaced titleForm">Formulário</h2>
+          <div>
             <CreateInput
               name="Nome"
               handleUserInput={this.handleUserInput}
@@ -153,30 +154,48 @@ export default class Form extends Component {
               maxLength={28}
               value={this.state.Cidade}
             />
-            <label>
-              Estado*:
-              <select name="Estado" value={this.state.Estado} onChange={this.handleUserInput}>
-                <option value=""></option>
-                {
-                this.state.estados.map((estado) => (
-                  <option
-                    key={estado}
-                    value={estado}
-                  >{estado}</option>))
-                }
-              </select>
-            </label>
-            <label>
-              Moradia*:
-              <label className="radioButtons">
-                <input onChange={this.handleUserInput} type="radio" name="Moradia" value="Casa" checked={this.state.Moradia === 'Casa'} />Casa
-              </label>
-              <label className="radioButtons">
-                <input onChange={this.handleUserInput} type="radio" name="Moradia" value="Apartamento" checked={this.state.Moradia === 'Apartamento'} />Apartamento
-              </label>
-            </label>
-          </fieldset>
-          <fieldset>
+            <div className="field is-horizontal">
+              <div className="field-label">
+                <label className="label">Estado*:</label>
+              </div>
+              <div className="field-body">
+                <div className="field">
+                  <div className="control">
+                    <select className="select is-normal" name="Estado" value={this.state.Estado} onChange={this.handleUserInput}>
+                      <option value="">Selecione seu estado</option>
+                      {
+                      this.state.estados.map((estado) => (
+                        <option
+                          key={estado}
+                          value={estado}
+                        >{estado}</option>))
+                      }
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="field is-horizontal">
+              <div className="field-label">
+                <label className="label">
+                  Moradia*:
+                </label>
+              </div>
+              <div className="field-body">
+                <div className="field">
+                  <div className="control">
+                    <label className="radio">
+                      <input onChange={this.handleUserInput} type="radio" name="Moradia" value="Casa" checked={this.state.Moradia === 'Casa'} />Casa
+                    </label>
+                    <label className="radio">
+                      <input onChange={this.handleUserInput} type="radio" name="Moradia" value="Apartamento" checked={this.state.Moradia === 'Apartamento'} />Apartamento
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
             <CreateTextarea
               name="Resumo"
               description="Resumo do currículo"
@@ -184,24 +203,37 @@ export default class Form extends Component {
               maxLength={1000}
               value={this.state.Resumo}
               />
-            <CreateTextarea
+            <CreateInput
               name="Cargo"
               handleUserInput={this.handleUserInput}
               handleOnMouseEnter={this.handleOnMouseEnter}
               maxLength={40}
               value={this.state.Cargo}
             />
-            <CreateInput
+            <CreateTextarea
               name="DescriçãoDoCargo"
               description="Descrição do cargo"
               handleUserInput={this.handleUserInput}
               maxLength={500}
               value={this.state.DescriçãoDoCargo}
             />
-          </fieldset>
-          <p>Campos marcados com '*' são obrigatórios</p>
-          <button type="submit" onClick={this.handleSubmit} >Enviar</button>
-          <button type="reset" onClick={this.handleReset} >Limpar</button>
+          </div>
+          <div className="field is-horizontal">
+            <div className="field-label"></div>
+            <div className="field-body">
+              <div className="field">
+                <p className="help has-text-weight-bold is-italic">Campos marcados com '*' são obrigatórios</p>
+              </div>
+            </div>
+          </div>
+          <div className="buttons is-grouped is-centered">
+            <div className="control">
+              <button className="button is-primary" type="submit" onClick={this.handleSubmit} >Enviar</button>
+            </div>
+            <div className="control">
+              <button className="button is-danger" type="reset" onClick={this.handleReset} >Limpar</button>
+            </div>
+          </div>
         </form>
         { this.state.Curriculum ? <CreateCurriculum getValues={this.getValues} /> : null}
       </div>

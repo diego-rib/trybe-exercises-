@@ -1,44 +1,13 @@
-.form fieldset {
+.form {
   display: flex;
   flex-flow: column;
-  margin: 50px 0px;
-  align-items: flex-start;
-  width: 70%;
-  margin: 0 auto;
+  max-width: 1000px;
+  margin: 10px auto 0;
+  padding: 10px 30px 20px 10px;
+  border-radius: 20px;
+  background-color: #ececec;
 }
 
-.form fieldset label {
-  margin: 20px 0;
-  display: flex;
-  align-items: center;
-}
-
-.form fieldset label *:nth-child(1) {
-  margin-left: 10px;
-}
-
-input {
-  border-radius: 4px;
-  border: 1px solid gray;
-  padding: 4px;
-}
-
-.input {
-  width: 250px;
-}
-
-.error {
-  font-size: 0.9rem;
-  color: red;
-  margin-left: 10px;
-  font-weight: 600;
-}
-
-.radioButtons > * {
-  margin-right: 5px;
-  margin-left: 30px;
-}
-
-.radioButtons:hover {
-  cursor: pointer;
+.titleForm {
+  margin: 10px 0 50px 0;
 }
