@@ -6,12 +6,13 @@ export default class CreateInput extends Component {
   render() {
     let error = '';
     let { name, maxLength, handleUserInput, value } = this.props;
+    let description = this.props.description || name;
     if (name !== 'Cpf') {
       if (value.length === maxLength) error = 'Limite de caracteres atingido';
     }
     return (
       <label>
-        {name}*:
+        {description}*:
         <input
           className="input"
           name={name}

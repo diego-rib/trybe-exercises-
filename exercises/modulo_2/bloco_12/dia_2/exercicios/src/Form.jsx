@@ -16,6 +16,7 @@ const initialState = {
   Moradia: '',
   Resumo: '',
   Cargo: '',
+  DescriçãoDoCargo: '',
   hasTriggered: false,
   Curriculum: false,
   actualData: [],
@@ -60,7 +61,7 @@ export default class Form extends Component {
   
   handleSubmit(event) {
     event.preventDefault();
-    const { Nome, Email, Cpf, Endereço, Cidade, Estado, Moradia, Resumo, Cargo } = this.state;
+    const { Nome, Email, Cpf, Endereço, Cidade, Estado, Moradia, Resumo, Cargo, DescriçãoDoCargo } = this.state;
     const invalidData = [];
     const validData = [];
     Nome.trim() !== '' ? validData.push(Nome) : invalidData.push('Nome');
@@ -72,6 +73,7 @@ export default class Form extends Component {
     Moradia.trim() !== '' ? validData.push(Moradia) : invalidData.push('Moradia');
     Resumo.trim() !== '' ? validData.push(Resumo) : invalidData.push('Resumo do currículo');
     Cargo.trim() !== '' ? validData.push(Cargo) : invalidData.push('Cargo');
+    DescriçãoDoCargo.trim() !== '' ? validData.push(DescriçãoDoCargo) : invalidData.push('Descrição Do Cargo');
 
     if (invalidData.length === 0) {
       this.setState(() => ({ actualData: validData}), this.showCurriculum());
@@ -188,6 +190,13 @@ export default class Form extends Component {
               handleOnMouseEnter={this.handleOnMouseEnter}
               maxLength={40}
               value={this.state.Cargo}
+            />
+            <CreateInput
+              name="DescriçãoDoCargo"
+              description="Descrição do cargo"
+              handleUserInput={this.handleUserInput}
+              maxLength={500}
+              value={this.state.DescriçãoDoCargo}
             />
           </fieldset>
           <p>Campos marcados com '*' são obrigatórios</p>
