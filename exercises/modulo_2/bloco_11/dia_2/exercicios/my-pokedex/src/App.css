@@ -1,0 +1,25 @@
+.App {
+  text-align: center;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.pokemon {
+  border: 2px solid black;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-around;
+  flex-grow: 1;
+  flex-basis: 45%;
+  min-width: 350px;
+  max-width: 70%;
+  margin: 10px 5px;
+}
+
+.pokemon-box {
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-evenly;
+  font-size: 16px;
+}

@@ -1,0 +1,13 @@
+.form {
+  display: flex;
+  flex-flow: column;
+  max-width: 1000px;
+  margin: 10px auto 0;
+  padding: 10px 30px 20px 10px;
+  border-radius: 20px;
+  background-color: #ececec;
+}
+
+.titleForm {
+  margin: 10px 0 50px 0;
+}
