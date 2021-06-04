@@ -1,0 +1,35 @@
+.App {
+  text-align: center;
+  margin: 50px auto;
+  width: 80%;
+}
+
+.loading {
+  font-size: 32px;
+  text-align: center;
+}
+
+.api-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #ccc;
+  color: #000;
+  border: 2px solid #000;
+  font-size: 18px;
+}
+
+.api-content > img {
+  border: 2px solid black;
+}
+
+.nxtBtn {
+  padding: 15px 30px;
+  font-size: 30px;
+  background-color: gray;
+  color: aliceblue;
+  margin: 50px;
+}
