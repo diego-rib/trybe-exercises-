@@ -1,6 +1,8 @@
 import React from 'react';
-import Pokemon from './Pokemon';
+
 import './styles/pokedex.css';
+
+import Pokemon from './Pokemon';
 import CreateButton from './createButton';
 
 class Pokedex extends React.Component {
@@ -55,7 +57,7 @@ class Pokedex extends React.Component {
       const uniqTypes = pokemons.map((pokemon) => pokemon.type).filter((type, index, uniqTypes) => uniqTypes.indexOf(type) === index);
       return (
         <div className="pokedex">
-          <Pokemon key={actualPoke.id} pokemon={actualPoke} />
+          <Pokemon key={actualPoke.id} pokemon={actualPoke} showMore={true} />
             <div className="typeButtons">
                 <button onClick={this.setType} className="all">All</button>
                 {uniqTypes.map((type) => (<CreateButton key={type} type={type} setType={this.setType} />))}

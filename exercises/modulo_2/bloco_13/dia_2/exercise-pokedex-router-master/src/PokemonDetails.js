@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+
+import './styles/pokemonDetails.css';
+
 import pokemons from './data';
+import Pokemon from './Pokemon';
 
 export default class PokemonDetails extends Component {
   constructor(props) {
@@ -22,31 +25,25 @@ export default class PokemonDetails extends Component {
   }
 
   renderInfo() {
-    const { pokemon: {
-      image,
-      name,
-      type,
-      averageWeight: { value, measurementUnit },
+    const { pokemon } = this.state;
+    const {
       foundAt,
       summary,
-      moreInfo
-    } } = this.state;
+    } = pokemon;
     return (
-      <div>
-        <img src={ image } alt={name} />
-        <p>Nome: { name }</p>
-        <p>Tipo: { type }</p>
-        <p>Peso: { value }{measurementUnit}</p>
+      <div className="pokemon-details-container">
+        <Pokemon pokemon={pokemon} />
         <p>Summary: { summary }</p>
-        {
-          foundAt.map(({ location, map }) => (
-            <div>
-              <p>{location}</p>
-              <img src={map} alt={location} />
-            </div>
-          ))
-        }
-        <a href={moreInfo}>Mais informações aqui</a>
+        <div className="maps-container">
+          {
+            foundAt.map(({ location, map }) => (
+              <div>
+                <p>{location}</p>
+                <img src={map} alt={location} />
+              </div>
+            ))
+          }
+        </div>
       </div>
     )
   }
@@ -60,7 +57,6 @@ export default class PokemonDetails extends Component {
     const { show } = this.state;
     return (
       <div>
-        <Link to="/">Back to home</Link>
         {
           show ? this.renderInfo() : null
         }
