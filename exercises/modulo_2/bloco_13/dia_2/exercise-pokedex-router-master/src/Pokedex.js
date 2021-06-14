@@ -9,8 +9,14 @@ class Pokedex extends React.Component {
     constructor(props) {
       super(props);
 
+      const { pokemons, getFavorite } = props;
+      const types = pokemons.map((pokemon) => pokemon.type).filter((type, index, uniqTypes) => uniqTypes.indexOf(type) === index);
+      const favoritePokemons = getFavorite();
+
       this.state = {
-        newPokemonsList: props.pokemons,
+        favoritePokemons,
+        types,
+        newPokemonsList: pokemons,
         index: 0,
         disabled: false,
       }
@@ -52,15 +58,16 @@ class Pokedex extends React.Component {
     }
 
     render () {
-      const actualPoke = this.state.newPokemonsList[this.state.index];
-      const { pokemons } = this.props;
-      const uniqTypes = pokemons.map((pokemon) => pokemon.type).filter((type, index, uniqTypes) => uniqTypes.indexOf(type) === index);
+      const { favoritePokemons, types, newPokemonsList, index } = this.state;
+      const actualPoke = newPokemonsList[index];
+      const fav = favoritePokemons.includes(actualPoke);
+      console.log(favoritePokemons);
       return (
         <div className="pokedex">
-          <Pokemon key={actualPoke.id} pokemon={actualPoke} showMore={true} />
+          <Pokemon key={actualPoke.id} pokemon={actualPoke} showMore={true} favorite={fav} />
             <div className="typeButtons">
                 <button onClick={this.setType} className="all">All</button>
-                {uniqTypes.map((type) => (<CreateButton key={type} type={type} setType={this.setType} />))}
+                {types.map((type) => (<CreateButton key={type} type={type} setType={this.setType} />))}
             </div>
             <button className="nextButton" disabled={this.state.disabled} onClick={this.nextPoke}>Proximo Pokemon</button>
         </div>

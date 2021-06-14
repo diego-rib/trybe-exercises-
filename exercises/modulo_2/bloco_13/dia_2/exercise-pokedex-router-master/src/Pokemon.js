@@ -4,7 +4,8 @@ import './styles/pokemon.css';
 
 export default class Pokemon extends React.Component {
     render() {
-        const { id, name, type, averageWeight, image } = this.props.pokemon;
+        const { pokemon, favorite } = this.props;
+        const { id, name, type, averageWeight, image } = pokemon;
         const show = this.props.showMore || false;
         return (
             <div className="pokemon">
@@ -16,6 +17,9 @@ export default class Pokemon extends React.Component {
                     </div>
                     <img src={image} alt={`${name} sprite`} />
                 </div>
+                {
+                    favorite ? <span className="favorite">Fav</span> : null
+                }
                 {
                     show ? <Link className="more-details" to={`/pokemons/${id}`}>More details</Link> : null
                 }

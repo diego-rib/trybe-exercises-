@@ -9,9 +9,13 @@ export default class PokemonDetails extends Component {
   constructor(props) {
     super(props);
 
+    const { getFavorite, pokemon } = this.props;
+    const favoritePokemons = getFavorite();
+
     this.state = {
       pokemon: undefined,
       false: false,
+      fav: favoritePokemons.includes(pokemon),
     }
 
     this.findPokemon = this.findPokemon.bind(this);
@@ -30,20 +34,25 @@ export default class PokemonDetails extends Component {
       foundAt,
       summary,
     } = pokemon;
+    const { setFavorite, value } = this.props;
     return (
       <div className="pokemon-details-container">
-        <Pokemon pokemon={pokemon} />
+        <Pokemon pokemon={pokemon} favorite={value} />
         <p>Summary: { summary }</p>
         <div className="maps-container">
           {
             foundAt.map(({ location, map }) => (
-              <div>
+              <div key={location}>
                 <p>{location}</p>
                 <img src={map} alt={location} />
               </div>
             ))
           }
         </div>
+        <label>
+          Marcar como favorito?
+          <input type="checkbox" name="favorite" checked={value} onChange={() => setFavorite(pokemon)} />
+        </label>
       </div>
     )
   }
