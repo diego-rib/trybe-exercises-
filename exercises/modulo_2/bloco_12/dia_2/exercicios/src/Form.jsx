@@ -59,7 +59,7 @@ export default class Form extends Component {
   showCurriculum() {
     this.setState({ Curriculum: true });
   }
-  
+
   handleSubmit(event) {
     event.preventDefault();
     const { Nome, Email, Cpf, Endereço, Cidade, Estado, Moradia, Resumo, Cargo, DescriçãoDoCargo } = this.state;
