@@ -1,0 +1,22 @@
+.pokemon-details-container {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.maps-container {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.maps-container > div {
+  margin: 5px;
+}
+
+.maps-container img {
+  width: 200px;
+}
