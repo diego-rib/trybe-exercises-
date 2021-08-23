@@ -7,7 +7,7 @@ SELECT CONCAT(Provider, ' - ', Piece) AS 'Maiores preços'
  ORDER BY Price DESC
  LIMIT 5;
 
-SELECT CONCAT(Piece, ': ', Provider, ' - ', Price)
+SELECT CONCAT(Piece, ': ', Provider, ' _ ', Price)
  AS 'Quatro maiores preços'
  FROM Provides
  ORDER BY Price DESC
