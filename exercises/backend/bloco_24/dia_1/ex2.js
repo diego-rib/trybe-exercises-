@@ -1,10 +1,4 @@
 db.movies.updateOne(
-  {
-    title: "Godzilla"
-  },
-  {
-    $set: {
-      budget: 1
-    }
-  }
+  { title: "Godzilla" },
+  { $set: { budget: 1 } }
 );
