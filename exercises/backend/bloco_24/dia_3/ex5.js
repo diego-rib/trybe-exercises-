@@ -3,7 +3,7 @@
 db.movies.updateOne(
   { title: "Home Alone" },
   {
-    $set: {
+    $push: {
       ratings: { $each: [200, 99, 65] }
     }
   }
