@@ -3,7 +3,7 @@
 db.movies.updateOne(
   { title: "Batman" },
   {
-    $set: {
+    $push: {
       ratings: { $each: [85, 100, 102, 105] }
     }
   }
