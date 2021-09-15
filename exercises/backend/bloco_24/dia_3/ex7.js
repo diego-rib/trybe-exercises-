@@ -3,7 +3,7 @@
 db.movies.find(
   {
     ratings: { 
-      $all: [{ $gt: 100 }, { $lt: 105 }],
+      $elemMatch: { $gt: 100, $lt: 105 },
     }
   },
   {
