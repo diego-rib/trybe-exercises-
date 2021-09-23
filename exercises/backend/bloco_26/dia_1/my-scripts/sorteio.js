@@ -18,4 +18,4 @@ const sorteio = () => {
   }
 }
 
-module.exports = sorteio;
+sorteio();

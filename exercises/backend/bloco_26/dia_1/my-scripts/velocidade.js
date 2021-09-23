@@ -9,4 +9,4 @@ const velocidade = () => {
   console.log(`A velocidade média do carro foi ${+(vm * 3.6).toFixed(2)} km/h.`);
 }
 
-module.exports = velocidade;
+velocidade();

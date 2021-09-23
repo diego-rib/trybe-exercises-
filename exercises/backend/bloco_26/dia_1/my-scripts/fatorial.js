@@ -15,4 +15,4 @@ const fatorial = () => {
   console.log(`\nFatorial de ${number} é ${calcFat(number)}\n`);
 }
 
-module.exports = fatorial;
+fatorial();

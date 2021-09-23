@@ -1,30 +1,29 @@
 const { questionInt } = require('readline-sync');
 
 const calcFib = (n) => {
-  let previousNumber = 0;
+  let firstNumber = 0;
   let fib = 1;
   let nextNumber = 1;
+  const fibNumbers = [];
 
-  if (n === 1) return 0; // o primeiro numero é 0
-  if (n <= 3) return 1; // segundo e terceiro numeros são 1
-
-  for (let index = 2; index <= n; index += 1) {
+  for (let index = 0; index < n; index += 1) {
     fib = nextNumber; // atualiza com o numero calculado previamente
-    nextNumber += previousNumber; // calcula o proximo numero
-    previousNumber = fib; // atualiza o numero antecessor
+    nextNumber += firstNumber; // calcula o proximo numero
+    firstNumber = fib; // atualiza o numero antecessor
+    fibNumbers.push(firstNumber);
   }
 
-  return fib;
+  console.log(fibNumbers.join(', '));
 };
 
 const fibonacci = () => {
-  let number = questionInt('Número a ser calculado o fibonacci: ');
+  let number = questionInt('Quantos números da sequência de Fibonacci? ');
   while (number <= 0) {
-    console.log('\nInsira um número positivo.');
-    number = questionInt('\nNúmero a ser calculado o fibonacci: ');
+    console.log('\nInsira um número positivo maior que 0.');
+    number = questionInt('\nQuantos números da sequência de Fibonacci? ');
   };
 
-  console.log(`\nFibonacci de ${number} é ${calcFib(number)}\n`);
+  calcFib(number);
 };
 
-module.exports = fibonacci;
+fibonacci();

@@ -19,7 +19,7 @@ const imc = () => {
   console.log(imcSituation(imcCalc));
 }
 
-module.exports = imc;
+imc();
 
 // | IMC                                       | Situação                  |
 // | ----------------------------------------- | ------------------------- |
