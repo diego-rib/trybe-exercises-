@@ -1,6 +1,8 @@
-const calcImc = (peso, altura) => peso / (altura) ** 2;
+const { questionFloat, questionInt } = require('readline-sync');
 
-const peso = 50;
-const altura = 1.65;
+const peso = questionFloat('Qual seu peso? (kg) ');
+const altura = questionInt('Qual sua altura? (cm) ');
 
-console.log(`Seu IMC é ${calcImc(peso, altura)}`);
+const imc = peso / (altura / 100) ** 2;
+
+console.log(`Seu IMC é ${imc.toFixed(2)}`);
