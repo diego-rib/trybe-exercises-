@@ -1,7 +1,6 @@
-const { questionInt, setDefaultOptions } = require('readline-sync');
+const { questionInt } = require('readline-sync');
 
 const velocidade = () => {
-  setDefaultOptions({limit: null});
   const distancia = questionInt('Qual a distancia percorrida? (m) ');
   const tempo = questionInt('Qual o tempo gasto? (s) ');
   

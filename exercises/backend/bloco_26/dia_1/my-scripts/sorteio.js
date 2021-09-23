@@ -7,11 +7,11 @@ const sorteio = () => {
     
     const guess = questionInt('Adivinhe o número secreto (0-10): ');
     
+    let message = `\nOpa, não foi dessa vez. O número era ${magicNumber}`;
     if (guess === magicNumber) {
-      console.log('\nParabéns, número correto!');
-    } else {
-      console.log(`\nOpa, não foi dessa vez. O número era ${magicNumber}`);
+      message = '\nParabéns, número correto!';
     }
+    console.log(message);
     
     play = keyInYN('\nDeseja jogar novamente? ');
     console.log();
