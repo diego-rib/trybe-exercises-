@@ -16,8 +16,10 @@ const main = (a, b, c) => {
     // 1.4 - Caso o resultado seja maior que 50, resolva a Promise com o valor obtido.
     resolve(resultado);
   });
-} 
+};
 
-main('15', 10, 2)
-  .then((result) => console.log(`Resultado foi: ${result}`))
-  .catch((err) => console.log(err.message));
+// main('15', 10, 2)
+//   .then((result) => console.log(`Resultado foi: ${result}`))
+//   .catch((err) => console.log(err.message));
+
+module.exports = main;
