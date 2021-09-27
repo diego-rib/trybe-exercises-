@@ -2,10 +2,8 @@ const fs = require('fs').promises;
 
 // 4.1 - Crie uma função que leia todos os dados do arquivo e imprima cada personagem no formato id - Nome . Por exemplo: 1 - Homer Simpson.
 fs.readFile('simpsons.json', 'utf8')
-  .then((rawdata) => {
-    const data = JSON.parse(rawdata);
-    // data.forEach(({ id, name }) => console.log(`${id} - ${name}`));
-  })
+  .then((rawdata) => JSON.parse(rawdata))
+  // .then((data) => data.forEach(({ id, name }) => console.log(`${id} - ${name}`)))
   .catch((err) => console.log(err.message));
 
 
@@ -13,8 +11,8 @@ fs.readFile('simpsons.json', 'utf8')
 const infoCharacter = (searchId) => {
   return new Promise(async (resolve, reject) => {
     await fs.readFile('simpsons.json', 'utf8')
-      .then((rawdata) => {
-        const data = JSON.parse(rawdata);
+      .then((rawdata) => JSON.parse(rawdata))
+      .then((data) => {
         const character = data.find(({ id }) => Number(id) === searchId);
         if(character) resolve(character);
         reject(new Error('id não encontrado'));
@@ -23,6 +21,31 @@ const infoCharacter = (searchId) => {
   });
 }
 
-infoCharacter(2)
-  .then((data) => console.log(data))
-  .catch((err) => console.log(err.message));
+// infoCharacter(2)
+//   .then((data) => console.log(data))
+//   .catch((err) => console.log(err.message));
+
+
+// 4.3 - Crie uma função que altere o arquivo simpsons.json retirando os personagens com id 10 e 6.
+const alterFile = async () => {
+
+  await fs.readFile('simpsons.json', 'utf8')
+  .then((rawdata) => JSON.parse(rawdata))
+  .then((data) => {
+    const filtered = data.filter(({ id }) => Number(id) !== 10 && Number(id) !== 6);
+    fs.writeFile('./simpsons.json', JSON.stringify(filtered, null, 2))
+      .then(() => console.log('Arquivo escrito com sucesso'))
+      .catch((err) => console.log(err.message));
+  });
+  
+  fs.readFile('simpsons.json', 'utf8')
+    .then((rawdata) => JSON.parse(rawdata))
+    .then((data) => data.forEach(({ id, name }) => console.log(`${id} - ${name}`)))
+    .catch((err) => console.log(err.message));
+}
+
+// alterFile();
+
+// 4.4 - Crie uma função que leia o arquivo simpsons.json e crie um novo arquivo, chamado simpsonFamily.json , contendo as personagens com id de 1 a 4.
+// 4.5 - Crie uma função que adicione ao arquivo simpsonFamily.json o personagem Nelson Muntz.
+// 4.6 - Crie uma função que substitua o personagem Nelson Muntz pela personagem Maggie Simpson no arquivo simpsonFamily.json.
