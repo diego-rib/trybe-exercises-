@@ -91,3 +91,20 @@ const alterFamilyFile = async () => {
 
 
 // 4.6 - Crie uma função que substitua o personagem Nelson Muntz pela personagem Maggie Simpson no arquivo simpsonFamily.json.
+const switchCharFamilyFile = async () => {
+  try {
+    const simpsons = await myReadFiles('simpsons.json');
+    const maggie = simpsons.find(({ name }) => name.match(/Maggie/));
+    const simpsonFamily = await myReadFiles('simpsonFamily.json');
+    const filtered = simpsonFamily.map((char) => {
+      if (char.name.match(/Nelson/)) return maggie;
+      return char;
+    });
+    await fs.writeFile('simpsonFamily.json', JSON.stringify(filtered, null, 2));
+    readAllFiles('simpsonFamily.json');
+  } catch(err) {
+    console.log(err.message);
+  }
+}
+
+// switchCharFamilyFile();
