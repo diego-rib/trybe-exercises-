@@ -1,5 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const { readSimpsons, newSimpson } = require('./helper');
+
 const app = express();
 app.use(bodyParser.json());
 
@@ -33,9 +35,18 @@ app.post('/greetings', function(req, res) {
 
 // 4 - Crie uma rota PUT /users/:name/:age .
 // 4.1 - Sua rota deve retornar o seguinte JSON: { "message": "Seu nome é <name> e você tem <age> anos de idade" } .
-app.put('/users/:name/:age', function(req, res) {
+app.put('/users/:name/:age', function (req, res) {
   const { name, age } = req.params;
   res.json({ message: `Seu nome é ${name} e você tem ${age} anos de idade` })
+});
+
+// 5 - Crie uma API de dados das personagens de Simpsons
+// 6 - Crie um endpoint GET /simpsons
+// 6.1 - O endpoint deve retornar um array com todos os simpsons.
+app.get('/simpsons', async function (_req, res) {
+  return readSimpsons()
+    .then((data) => res.status(200).json(data))
+    .catch(() => res.status(500).end());
 });
 
 app.listen(3001, () => {
