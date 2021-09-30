@@ -9,20 +9,20 @@ const { expect } = require('chai');
 const ex1 = require('../ex1');
 
 describe('Exercício 1', () => {
-  describe('Recebe um número como parâmetro e retorna uma string', () => {
-    it('positivo', () => {
+  describe('Recebe um número como parâmetro e retorna a string:', () => {
+    it('\"positivo\"', () => {
       const resposta = ex1(5);
       expect(resposta).to.be.a('string');
       expect(resposta).to.be.equals('positivo');
     });
     
-    it('negativo', () => {
+    it('\"negativo\"', () => {
       const resposta = ex1(-2);
       expect(resposta).to.be.a('string');
       expect(resposta).to.be.equals('negativo');
     });
     
-    it('neutro', () => {
+    it('\"neutro\"', () => {
       const resposta = ex1(0);
       expect(resposta).to.be.a('string');
       expect(resposta).to.be.equals('neutro');
