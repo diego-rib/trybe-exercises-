@@ -9,8 +9,8 @@ const { expect } = require('chai');
 const ex1 = require('../ex1');
 
 describe('Exercício 1', () => {
-  describe('Recebe um número como parâmetro e retorna a string:', () => {
-    it('\"positivo\"', () => {
+  describe('Recebe um número como parâmetro', () => {
+    it('Retorna a mensagem \"positivo\"', () => {
       const resposta = ex1(5);
       expect(resposta).to.be.a('string');
       expect(resposta).to.be.equals('positivo');
@@ -26,6 +26,26 @@ describe('Exercício 1', () => {
       const resposta = ex1(0);
       expect(resposta).to.be.a('string');
       expect(resposta).to.be.equals('neutro');
+    });
+  });
+
+  describe('Recebe um parâmetro não numérico', () => {
+    it('recebe uma string e retorna erro', () => {
+      const resposta = ex1('string');
+      expect(resposta).to.be.a('string');
+      expect(resposta).to.be.equals('o valor deve ser um número');
+    });
+
+    it('recebe um booleano e retorna erro', () => {
+      const resposta = ex1(false);
+      expect(resposta).to.be.a('string');
+      expect(resposta).to.be.equals('o valor deve ser um número');
+    });
+
+    it('recebe um objeto e retorna erro', () => {
+      const resposta = ex1({});
+      expect(resposta).to.be.a('string');
+      expect(resposta).to.be.equals('o valor deve ser um número');
     });
   });
 });
