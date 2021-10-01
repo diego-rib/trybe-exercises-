@@ -6,7 +6,7 @@ async function readSimpsons() {
 }
 
 function newSimpson(content) {
-  return fs.writeFile('./simpsons.json', JSON.stringify(content));
+  return fs.writeFile('./simpsons.json', JSON.stringify(content, null, 2));
 }
 
 module.exports = { readSimpsons, newSimpson };
