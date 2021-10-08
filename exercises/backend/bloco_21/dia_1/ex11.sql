@@ -1,3 +1,0 @@
-UPDATE hr.employees
-SET PHONE_NUMBER = REPLACE (PHONE_NUMBER, '515', '777')
-WHERE phone_number LIKE '515%';
