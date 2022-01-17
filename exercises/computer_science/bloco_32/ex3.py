@@ -3,8 +3,9 @@
 number = 10
 
 def sumOfTerms (x):
+  max_range = x + 1
   total = 0
-  for i in range(1, x):
+  for i in range(1, max_range):
       total += i
   return total
 
