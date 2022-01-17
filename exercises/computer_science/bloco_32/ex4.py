@@ -3,30 +3,30 @@
 # e retorne o valor a ser pago pelo cliente,
 # o preço do litro da gasolina é R$ 2,50, e o preço do litro do álcool é R$ 1,90
 
-litersSold = 10
-typeSold = 'A'
+liters_sold = 10
+type_sold = 'A'
 
-def calcTotalPrice (selledLiters, type):
-    priceTable = {
+def calculate_total_price (selled_liters, type):
+    price_table = {
       "A": {
-          "minDiscount": 0.03,
-          "maxDiscount": 0.05,
+          "min_discount": 0.03,
+          "max_discount": 0.05,
           "price": 1.90,
       },
       "G": {
-          "minDiscount": 0.04,
-          "maxDiscount": 0.06,
+          "min_discount": 0.04,
+          "max_discount": 0.06,
           "price": 2.50,
       },
     }
 
-    if selledLiters < 20:
-        totalDiscount = selledLiters * priceTable[type]["minDiscount"]
+    if selled_liters < 20:
+        total_discount = selled_liters * price_table[type]["min_discount"]
     else:
-        totalDiscount = selledLiters * priceTable[type]["maxDiscount"]
+        total_discount = selled_liters * price_table[type]["max_discount"]
 
-    totalPrice = (selledLiters * priceTable[type]["price"]) - totalDiscount
+    total_price = (selled_liters * price_table[type]["price"]) - total_discount
 
-    return totalPrice
+    return total_price
 
-print(calcTotalPrice(litersSold, typeSold))
+print(calculate_total_price(liters_sold, type_sold))

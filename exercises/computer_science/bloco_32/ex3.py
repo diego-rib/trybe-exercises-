@@ -2,7 +2,7 @@
 
 number = 10
 
-def sumOfTerms (x):
+def sum_of_terms (x):
   max_range = x + 1
   total = 0
   for i in range(1, max_range):
@@ -10,4 +10,4 @@ def sumOfTerms (x):
   return total
 
 
-print(sumOfTerms(number))
+print(sum_of_terms(number))
